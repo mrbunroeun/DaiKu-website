@@ -22,3 +22,4 @@
 # /.zed
 /public/assets/images/video.mp4
 /public/assets/images/video.webm
+node_modules
