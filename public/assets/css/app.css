@@ -1,0 +1,14 @@
+/* .active {
+    font-weight: 700;
+    color: #deb266;
+}
+
+a.active::before {
+    content: "";
+    position: absolute;
+    bottom: -14px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: 6px;
+    background-color: #deb266;
+} */
