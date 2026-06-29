@@ -146,15 +146,41 @@
         </ul>
     </div>
 </section>
+<div class="lg:hidden px-4 pt-2 pb-1">
+    <p class="text-white text-[10px] leading-snug text-right">
+        No G 169 , Street ARATA, Sangkat Khmounh, Khan Sen Sok Phnom Penh Cambodia.<br>
+        a2zengineering.kh@gmail.com &nbsp; (+855) 67 39 3333 / (+855) 78 878 888
+    </p>
+</div>
 {{-- ── MOBILE NAVBAR ── --}}
 <nav class="lg:hidden relative z-50" style="background:var(--navy-light);">
 
     {{-- Mobile contact strip --}}
-    <div class="pt-2 pb-2">
-        <p class="text-white text-[10px] leading-snug text-center">
+    {{-- <div class="pt-2 pb-2">
+        <p class="text-white text-[10px] leading-snug text-right">
             No G 169 , Street ARATA, Sangkat Khmounh, Khan Sen Sok Phnom Penh Cambodia.<br>
-            a2zengineering.kh@gmail.com &nbsp; (+855) 67 39 3333 / (+855) 78 878 888
+            a2zengineering.kh@gmail.com          (+855) 67 39 3333 / (+855) 78 878 888
         </p>
+    </div> --}}
+
+    <div class="max-w-screen-2xl mx-auto px-6 xl:px-12 2xl:px-20">
+
+    {{-- Mobile top bar --}}
+    <div class="flex items-center justify-between py-3">
+        <a href="{{ route('home') }}" aria-label="Daiku MEP Home">
+            <img src="{{ asset('assets/images/logo-daiku.png') }}" alt="Daiku MEP" class="h-10 w-auto">
+        </a>
+
+        <button id="hamburger"
+            class="flex flex-col justify-center items-center gap-[6px] p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 rounded"
+            onclick="toggleMobileMenu()"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="mobile-menu">
+            <span class="ham-line"></span>
+            <span class="ham-line"></span>
+            <span class="ham-line"></span>
+        </button>
     </div>
 
     {{-- Mobile dropdown --}}
@@ -163,14 +189,16 @@
 
             <li>
                 <a href="{{ route('home') }}"
-                   class="block px-3 py-3 rounded-lg text-white hover:text-[#F26B27] hover:bg-white/8 transition-all duration-200 text-center {{ Route::is('home') ? 'mobile-active' : '' }}">
+                   class="flex items-center gap-3 px-3 py-3 rounded-lg text-white hover:text-[#F26B27] hover:bg-white/8 transition-all duration-200 {{ Route::is('home') ? 'mobile-active' : '' }}">
+                    <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
                     Home
                 </a>
             </li>
 
             <li>
                 <a href="{{ route('about') }}"
-                   class="block px-3 py-3 rounded-lg text-white hover:text-[#F26B27] hover:bg-white/8 transition-all duration-200 text-center {{ Route::is('about') ? 'mobile-active' : '' }}">
+                   class="flex items-center gap-3 px-3 py-3 rounded-lg text-white hover:text-[#F26B27] hover:bg-white/8 transition-all duration-200 {{ Route::is('about') ? 'mobile-active' : '' }}">
+                    <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
                     About Us
                 </a>
             </li>
@@ -178,11 +206,14 @@
             {{-- Services w/ accordion --}}
             <li>
                 <button onclick="toggleMobileSubmenu('services-sub', 'services-arrow')"
-                        class="w-full flex items-center justify-center px-3 py-3 rounded-lg text-white hover:text-[#F26B27] hover:bg-white/8 transition-all duration-200 relative {{ Route::is('service', 'services.*') ? 'mobile-active' : '' }}"
+                        class="w-full flex items-center justify-between gap-3 px-3 py-3 rounded-lg text-white hover:text-[#F26B27] hover:bg-white/8 transition-all duration-200 {{ Route::is('service', 'services.*') ? 'mobile-active' : '' }}"
                         aria-expanded="false"
                         aria-controls="services-sub">
-                    Services
-                    <svg id="services-arrow" class="w-4 h-4 transition-transform duration-300 absolute right-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span class="flex items-center gap-3">
+                        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        Services
+                    </span>
+                    <svg id="services-arrow" class="w-4 h-4 transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                     </svg>
                 </button>
