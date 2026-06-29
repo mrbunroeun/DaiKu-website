@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#1f3347">
     <title>@yield('title', 'Daiku MEP Solution')</title>
 
-    <link rel="icon" sizes="32x32" href="{{ asset('assets/images/logo-daiku.png') }}">
+    <link rel="icon" sizes="32x32" href="{{ asset('assets/images/logo-daiku.svg') }}">
 
     {{-- Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -435,7 +435,7 @@
     <div id="page-loader" role="status" aria-label="Loading">
         <div style="position:relative; display:flex; align-items:center; justify-content:center;">
             <div class="loader-ring"></div>
-            <img src="{{ asset('assets/images/logo-daiku.png') }}" alt="" class="loader-logo">
+            <img src="{{ asset('assets/images/logo-daiku.svg') }}" alt="" class="loader-logo">
         </div>
     </div>
 

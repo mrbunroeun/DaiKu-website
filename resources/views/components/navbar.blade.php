@@ -11,7 +11,7 @@
         {{-- ── DESKTOP LOGO (absolute left) ── --}}
         <a href="{{ route('home') }}" aria-label="Daiku MEP Home"
             class="absolute left-6 xl:left-12 2xl:left-20 flex items-center flex-shrink-0">
-            <img src="{{ asset('assets/images/logo-daiku.png') }}" alt="Daiku MEP"
+            <img src="{{ asset('assets/images/logo-daiku.svg') }}" alt="Daiku MEP"
                 class="block w-auto object-contain flex-shrink-0" style="height: 52px; min-width: 48px;">
         </a>
 
@@ -161,7 +161,7 @@
 
     {{-- Mobile contact strip --}}
     {{-- <div class="pt-2 pb-2">
-        <p class="text-white text-[10px] leading-snug text-right">
+    <p class="text-white text-[9px] leading-snug text-right">
             No G 169 , Street ARATA, Sangkat Khmounh, Khan Sen Sok Phnom Penh Cambodia.<br>
             a2zengineering.kh@gmail.com          (+855) 67 39 3333 / (+855) 78 878 888
         </p>
@@ -172,7 +172,7 @@
         {{-- Mobile top bar --}}
         <div class="flex items-center justify-between py-3">
             <a href="{{ route('home') }}" aria-label="Daiku MEP Home">
-                <img src="{{ asset('assets/images/logo-daiku.png') }}" alt="Daiku MEP" class="h-10 w-auto">
+                <img src="{{ asset('assets/images/logo-daiku.svg') }}" alt="Daiku MEP" class="h-10 w-auto">
             </a>
 
             <button id="hamburger"

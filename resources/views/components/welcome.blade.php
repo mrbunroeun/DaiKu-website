@@ -46,10 +46,10 @@
 
 @if(request()->is('/'))
 <section class="w-full">
-    <div class="w-full max-w-4xl mx-auto text-center -mt-[-60px] sm:pt-20 padding_section">
+    <div class="w-full max-w-4xl mx-auto text-center -mt-[-70px] sm:pt-20 padding_section">
         <div class="flex flex-col items-center justify-center font-bold leading-none">
 
-            <h2 class="text-[14px] sm:text-[16px] md:text-[20px] lg:text-[30px]
+            <h2 class="text-semibold text-[14px] sm:text-[16px] md:text-[20px] lg:text-[30px]
                        text-[#2b3d4f] md:text-[#ffffff] uppercase"
                 data-aos="fade-up" data-aos-duration="1000">
                 Welcome to
@@ -57,10 +57,10 @@
 
             <h1 class="text-[22px] sm:text-[40px] md:text-[50px] lg:text-[70px]
                        text-[#f26b27]
-                       drop-shadow-[2px_2px_4px_rgba(0,0,0,0.5)]"
+                       "
                 data-aos="fade-up" data-aos-duration="1500">
 
-                <span class="text-[28px] sm:text-[50px] md:text-[60px] lg:text-[80px]">
+                <span class="text-[25px] sm:text-[45px] md:text-[55px] lg:text-[70px]">
                     Daiku MEP Solution
                 </span>
 
@@ -85,6 +85,7 @@
             <h2 class="text-[14px] sm:text-[16px] md:text-[20px] lg:text-[30px]
                        text-[#2b3d4f] md:text-[#ffffff] uppercase"
                 data-aos="fade-up" data-aos-duration="1000">
+                about 
               
             </h2>
 
@@ -95,7 +96,7 @@
 
                 <span class="text-[28px] sm:text-[50px] md:text-[60px] lg:text-[80px]">
                    Trusted MEP Engineering &amp;<br> Maintenance Partner in Cambodia
-                </span>
+                </span> 
 
             </h1>
 
