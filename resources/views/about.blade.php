@@ -682,11 +682,11 @@
         </div>
     </div>
 
-{{-- ===== MISSION / VISION ===== --}}
+    {{-- ===== MISSION / VISION ===== --}}
 <section class="mission-section">
     <div class="circle-wrapper" id="wrapper">
         <div class="circle-track" id="track">
-            <!-- JS will fill this -->
+            <!-- JS will fill this -->  
         </div>
     </div>
 
@@ -699,10 +699,12 @@
 <style>
     .mission-section {
         text-align: center;
-        padding: 120px 20px 80px;
+        padding: 80px 20px 60px;
     }
 
     .circle-wrapper {
+        display: flex;
+        justify-content: center;
         overflow: hidden;
         margin-bottom: 40px;
         cursor: grab;
@@ -717,10 +719,9 @@
     .circle-track {
         display: flex;
         align-items: center;
-        gap: 90px;
-        transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-        padding: 30px 0;
-        width: max-content;
+        gap: 80px;
+        transition: transform 0.45s cubic-bezier(0.32, 0.72, 0, 1);
+        padding: 20px 0;
     }
 
     .circle-track.no-transition {
@@ -729,32 +730,39 @@
 
     .circle {
         border-radius: 50%;
+        background: #24364b;
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
         flex-shrink: 0;
+        transition: all 0.4s ease;
+    }
+
+    .circle.small {
         width: 140px;
         height: 140px;
-        transition: width 0.4s ease, height 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .circle.main {
+        width: 240px;
+        height: 240px;
     }
 
     .circle.active {
-        width: 240px;
-        height: 240px;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+        box-shadow: 0 20px 45px rgba(0,0,0,0.22);
+        transform: scale(1.05);
     }
 
     .circle img {
-        width: 85%;
-        height: 85%;
-        border-radius: 50%;
-        object-fit: cover;
+        width: 82%;
+        height: 82%;
+        object-fit: contain;
     }
 
     @media (max-width: 640px) {
-        .circle { width: 90px; height: 90px; }
-        .circle.active { width: 170px; height: 170px; }
+        .circle.small { width: 95px; height: 95px; }
+        .circle.main  { width: 175px; height: 175px; }
         .circle-track { gap: 50px; }
     }
 
@@ -765,19 +773,26 @@
     }
 
     .content-box h2 {
-        font-size: 28px;
+        font-size: 30px;
         font-weight: 700;
-        margin-bottom: 15px;
+        color: #F26A27;
+        margin-bottom: 12px;
     }
 
     .content-box p {
-        font-size: 15px;
-        line-height: 1.8;
+        font-size: 14px;
+        line-height: 1.7;
+        color: #333;
     }
 </style>
 
 <script>
     const contents = [
+        {
+            title: "Core Value",
+            image: "{{ asset('assets/images/icone/image-20.png') }}",
+            description: "Integrity, Quality, Innovation, Teamwork and Customer Satisfaction are the foundation of our success."
+        },
         {
             title: "Mission",
             image: "{{ asset('assets/images/icone/image-18.png') }}",
@@ -787,94 +802,59 @@
             title: "Vision",
             image: "{{ asset('assets/images/icone/image-19.png') }}",
             description: "Our vision is to become the most trusted MEP engineering consultancy in Cambodia and the region."
-        },
-        {
-            title: "Core Value",
-            image: "{{ asset('assets/images/icone/image-20.png') }}",
-            description: "Integrity, Quality, Innovation, Teamwork and Customer Satisfaction are the foundation of our success."
         }
     ];
 
+    let currentIndex = 1; // Start with Mission in center
     const track = document.getElementById('track');
     const wrapper = document.getElementById('wrapper');
 
-    const SMALL = 140;
-    const GAP = 90;
-    const STEP = SMALL + GAP; // distance between two circle centers at rest
-
-    let currentIndex = 0;
-
     function createSlides() {
         track.innerHTML = '';
+
         contents.forEach((item, i) => {
             const div = document.createElement('div');
-            div.className = 'circle';
-            div.dataset.index = i;
+            div.className = `circle ${i === 1 ? 'main active' : 'small'}`;
             div.innerHTML = `<img src="${item.image}" alt="${item.title}">`;
             track.appendChild(div);
         });
     }
 
-    function updateText(idx) {
-        document.getElementById('title').textContent = contents[idx].title;
-        document.getElementById('description').textContent = contents[idx].description;
-    }
-
-    function setActive(idx) {
-        [...track.children].forEach((c, i) => {
-            c.classList.toggle('active', i === idx);
+    function updateLayout() {
+        const circles = track.querySelectorAll('.circle');
+        
+        circles.forEach((circle, i) => {
+            circle.classList.remove('main', 'active');
+            if (i === currentIndex) {
+                circle.classList.add('main', 'active');
+            } else {
+                circle.classList.add('small');
+            }
         });
+
+        document.getElementById('title').textContent = contents[currentIndex].title;
+        document.getElementById('description').textContent = contents[currentIndex].description;
     }
 
-    // Position the track so `currentIndex`'s circle sits centered in the wrapper.
-    function getBaseOffset(index) {
-        const wrapperCenter = wrapper.offsetWidth / 2;
-        return wrapperCenter - (index * STEP) - (SMALL / 2);
-    }
-
-    function snapTo(index, animate = true) {
-        track.classList.toggle('no-transition', !animate);
-        track.style.transform = `translateX(${getBaseOffset(index)}px)`;
-        setActive(index);
-        updateText(index);
-        currentIndex = index;
-    }
-
-    // Drag logic
+    // Drag variables
     let isDragging = false;
     let startX = 0;
-    let baseOffset = 0;
+    let prevTranslate = 0;
+    let currentTranslate = 0;
+    const threshold = 65;
 
     function startDrag(x) {
         isDragging = true;
         startX = x;
-        baseOffset = getBaseOffset(currentIndex);
+        currentTranslate = prevTranslate;
         track.classList.add('no-transition');
         wrapper.classList.add('dragging');
     }
 
     function moveDrag(x) {
         if (!isDragging) return;
-        const delta = x - startX;
-        const liveOffset = baseOffset + delta;
-        track.style.transform = `translateX(${liveOffset}px)`;
-
-        // Determine which circle is currently nearest the wrapper's center,
-        // live, so partial drag states (1 left/1 center/1 right, or
-        // 2 left/1 center, etc.) update the active highlight + text as you go.
-        const wrapperCenter = wrapper.offsetWidth / 2;
-        let closestIndex = currentIndex;
-        let closestDist = Infinity;
-        contents.forEach((_, i) => {
-            const circleCenterX = liveOffset + (i * STEP) + (SMALL / 2);
-            const dist = Math.abs(circleCenterX - wrapperCenter);
-            if (dist < closestDist) {
-                closestDist = dist;
-                closestIndex = i;
-            }
-        });
-        setActive(closestIndex);
-        updateText(closestIndex);
+        currentTranslate = prevTranslate + (x - startX);
+        track.style.transform = `translateX(${currentTranslate}px)`;
     }
 
     function endDrag() {
@@ -883,13 +863,26 @@
         wrapper.classList.remove('dragging');
         track.classList.remove('no-transition');
 
-        // Snap fully to whichever circle is currently marked active.
-        const activeEl = track.querySelector('.circle.active');
-        const idx = activeEl ? parseInt(activeEl.dataset.index, 10) : currentIndex;
-        snapTo(idx, true);
+        const moved = currentTranslate - prevTranslate;
+
+        if (moved > threshold) {
+            currentIndex = (currentIndex - 1 + contents.length) % contents.length;
+        } else if (moved < -threshold) {
+            currentIndex = (currentIndex + 1) % contents.length;
+        }
+
+        // Snap back to center
+        prevTranslate = 0;
+        track.style.transform = 'translateX(0px)';
+        
+        updateLayout();
     }
 
-    wrapper.addEventListener('mousedown', e => { e.preventDefault(); startDrag(e.clientX); });
+    // Events
+    wrapper.addEventListener('mousedown', e => {
+        e.preventDefault();
+        startDrag(e.clientX);
+    });
     window.addEventListener('mousemove', e => moveDrag(e.clientX));
     window.addEventListener('mouseup', endDrag);
 
@@ -897,8 +890,9 @@
     wrapper.addEventListener('touchmove', e => moveDrag(e.touches[0].clientX));
     wrapper.addEventListener('touchend', endDrag);
 
+    // Initialize
     createSlides();
-    snapTo(0, false);
+    updateLayout();
 </script>
 
     {{-- ===== FAQ ===== --}}
