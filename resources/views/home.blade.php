@@ -87,60 +87,65 @@
      - Background color: bg-[#F26A27] on line 85
      - Height: h-[750px] xl:h-[800px] on the wrapper div
 ========================================================= --}}
-    <div
-        class="relative -top-[230px] lg:-top-[400px] home_clip
-            min-h-[420px] sm:min-h-[500px] lg:min-h-[780px] overflow-hidden">
+<div
+    class="relative -top-[230px] lg:-top-[400px] home_clip
+        min-h-[420px] sm:min-h-[500px] lg:min-h-[780px] overflow-hidden">
 
-        {{-- Background Shape --}}
-        <img src="{{ asset('assets/images/shapes/style.png') }}" alt=""
-            class="absolute top-0 left-0 w-full
-            block lg:hidden
-            origin-center
-            -rotate-2
-            scale-150
-            pointer-events-none"
-            data-aos="fade-up" data-aos-duration="1000">
+    {{-- Background Shape (mobile) --}}
+    <img src="{{ asset('assets/images/shapes/style.png') }}" alt=""
+        class="absolute top-0 left-0 w-full
+        block lg:hidden
+        origin-center
+        -rotate-2
+        scale-150
+        z-0
+        pointer-events-none"
+        data-aos="fade-up" data-aos-duration="1000">
 
-        {{-- Background Shape (desktop) --}}
-        <img src="{{ asset('assets/images/shapes/style.png') }}" alt=""
-            class="absolute top-0 left-0 w-full
-            hidden lg:block
-            origin-center
-            -rotate-2
-            scale-400
-            pointer-events-none"
-            data-aos="fade-up" data-aos-duration="1000">
+    {{-- Background Shape (desktop) --}}
+    <img src="{{ asset('assets/images/shapes/style.png') }}" alt=""
+        class="absolute top-0 left-0 w-full
+        hidden lg:block
+        origin-center
+        -rotate-2
+        scale-150
+        z-0
+        pointer-events-none"
+        data-aos="fade-up" data-aos-duration="1000">
 
-        {{-- Hero Content --}}
-        <div class="absolute  inset-0 flex justify-center items-start  z-20">
+    {{-- Hero Content --}}
+    <div class="absolute inset-0 flex justify-center items-start z-20">
 
-            <div class="w-full max-w-5xl mx-auto px-6 sm:px-8 pt-[-10rem] lg:px-12 text-center text-white lg:pt-[280px]">
+        <div class="w-full max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-center text-white lg:pt-[280px]">
 
-                <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl sm:mt-[-3rem] font-bold leading-tight">
-                    Professional MEP Engineering & HVAC <br>
-                    Solutions in Cambodia 
-                </h1>
+            <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl sm:mt-[-3rem] font-bold leading-tight">
+                Professional MEP Engineering & HVAC <br>
+                Solutions in Cambodia
+            </h1>
 
-                <p class="mt-6 max-w-3xl mx-auto text-center text-xs sm:text-sm md:text-base leading-7" data-aos="fade-up"
-                    data-aos-duration="900" data-aos-delay="100">
-                    Design, installation, maintenance, and consultancy services for HVAC, electrical, plumbing, and fire
-                    protection systems across commercial, industrial, and residential projects.
-                </p>
+            <p class="mt-6 max-w-3xl mx-auto text-center text-xs sm:text-sm md:text-base leading-7" data-aos="fade-up"
+                data-aos-duration="900" data-aos-delay="100">
+                Design, installation, maintenance, and consultancy services for HVAC, electrical, plumbing, and fire
+                protection systems across commercial, industrial, and residential projects.
+            </p>
 
-                <div class="flex justify-center mt-8" data-aos="fade-up" data-aos-duration="900" data-aos-delay="300">
-                    <a href="{{ route('project') }}"
-                        class="w-56 h-14 flex items-center justify-center
-              bg-[#2B3D4F] hover:bg-[#243342]
-              text-white rounded-lg font-semibold transition">
-                        View Our Projects
-                    </a>
-                </div>
-
+            <div class="flex justify-center mt-6 sm:mt-8" data-aos="fade-up" data-aos-duration="900"
+                data-aos-delay="300">
+                <a href="{{ route('project') }}"
+                    class="w-40 h-10 text-xs
+      sm:w-44 sm:h-11 sm:text-sm
+      md:w-56 md:h-14 md:text-base
+      flex items-center justify-center
+      bg-[#2B3D4F] hover:bg-[#243342]
+      text-white rounded-lg font-semibold transition">
+                    View Our Projects
+                </a>
             </div>
-
         </div>
 
     </div>
+
+</div>
 
 
     {{-- =========================================================
