@@ -20,14 +20,14 @@ class SendMailController extends Controller
             'notes'        => 'nullable|string',
         ]);
 
-        // Option 1: send an email notification
+        // TODO: Send Email
         // Mail::to('info@daikumep.com')->send(new \App\Mail\ContactSubmitted($validated));
 
-        // Option 2: save to database (uncomment once you have a model/table)
+        // TODO: Save to database (recommended)
         // \App\Models\ContactRequest::create($validated);
 
         return redirect()
             ->back()
-            ->with('success', 'Thanks! Your request has been submitted. We will contact you soon.');
+            ->with('success', 'Thank you! Your request has been submitted successfully. We will contact you shortly.');
     }
 }

@@ -1,2 +1,14 @@
+# robots.txt for https://www.daikumep.com
+
 User-agent: *
-Disallow:
+Allow: /
+
+# Prevent crawling of sensitive areas
+Disallow: /admin/
+Disallow: /login
+Disallow: /register
+Disallow: /dashboard
+Disallow: /storage
+
+# Sitemap
+Sitemap: https://www.daikumep.com/sitemap.xml
