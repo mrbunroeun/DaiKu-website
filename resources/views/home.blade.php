@@ -88,7 +88,7 @@
      - Height: h-[750px] xl:h-[800px] on the wrapper div
 ========================================================= --}}
     <div
-        class="relative -top-[260px] lg:-top-[400px] home_clip
+        class="relative -top-[260px] max-[500px]:-top-[350px] lg:-top-[400px] home_clip
         min-h-[420px] sm:min-h-[500px] lg:min-h-[780px] overflow-hidden">
 
         {{-- Background Color (mobile only, sits behind the shape image, shorter height) --}}
@@ -150,6 +150,12 @@
         </div>
 
     </div>
+
+
+
+
+
+
 
 
     {{-- =========================================================
@@ -309,20 +315,20 @@
         {{-- ── HUMAN PHOTO (desktop only) ── --}}
         <img src="{{ asset('assets/images/whychoos-us/Mask1.png') }}" alt="Daiku Engineer"
             class="absolute 
-           left-[30%] -translate-x-1/2
-           h-[120%] lg:h-[100%] xl:h-[90%]
+           left-[30%]  -translate-x-1/2
+           h-[70%] w-[70%] lg:h-[100%] xl:h-[90%]
            w-auto max-w-[50%] lg:max-w-[52%] xl:max-w-[55%]
            object-contain object-left-bottom
-           rotate-4
+           rotate-4 max-[1280px]:mt-[-40px]
            md:block hidden
-           mb-10" />
+           mb-20" />
 
         {{-- ── HUMAN PHOTO (mobile: left side) ── --}}
         {{-- ── HUMAN PHOTO (mobile: left side) ── --}}
         <div
             class="absolute inset-0 w-full h-full flex items-center md:hidden z-[1] pointer-events-none overflow-hidden bg-[#F26A27]">
             <img src="{{ asset('assets/images/whychoos-us/mask2.png') }}" alt="Daiku Engineer"
-                class="absolute h-[100%] w-auto max-w-[90%] left-[-20px] top-3 " />
+                class="absolute max-[500px]:max-w-[50%] max-[500px]:max-w-[50%] h-[100%] w-auto max-w-[90%] left-[-20px] top-3 " />
         </div>
 
         {{-- ── CONTENT ── --}}
@@ -347,7 +353,7 @@
 
                 {{-- Left spacer for human photo (all screens) --}}
                 <div class="flex-shrink-0
-                        w-[45%] md:w-[30%] lg:w-[35%] xl:w-[38%]">
+                        w-[45%] md:w-[30%] lg:w-[35%] xl:w-[38%] ">
                 </div>
 
                 {{-- Reasons Grid --}}
