@@ -6,17 +6,18 @@
         'services.electrical'       => 'Trusted MEP Engineering &<br> Maintenance Partner in Cambodia',
         'services.plumbing'         => 'Trusted MEP Engineering &<br> Maintenance Partner in Cambodia',
         'services.mep'               => 'Trusted MEP Engineering &<br> Maintenance Partner in Cambodia',
-        'contact'                    => 'Contact Us',
+        'contact'                    => 'Trusted MEP Engineering &<br> Maintenance Partner in Cambodia',
         'career'                      => 'Trusted MEP Engineering &<br> Maintenance Partner in Cambodia',
         'project'                     => 'Trusted MEP Engineering &<br> Maintenance Partner in Cambodia',
         'professional.project.show' => 'Trusted MEP Engineering &<br> Maintenance Partner in Cambodia',
-        'insights'                    => 'Insights',
+        'insights'                    => 'Trusted MEP Engineering &<br> Maintenance Partner in Cambodia',
         'insights.mechanical'       => 'Trusted MEP Engineering &<br> Maintenance Partner in Cambodia',
         'insights.electrical'       => 'Trusted MEP Engineering &<br> Maintenance Partner in Cambodia',
         'insights.plumbing'         => '',
         'insights.mep'               => 'Trusted MEP Engineering &<br> Maintenance Partner in Cambodia',
         'insights.facility'         => 'Trusted MEP Engineering &<br> Maintenance Partner in Cambodia',
         'insights.show'              => 'Trusted MEP Engineering &<br> Maintenance Partner in Cambodia',
+        'maintenance'              => 'Trusted MEP Engineering &<br> Maintenance Partner in Cambodia',
     ];
 
     $routePageNames = [
