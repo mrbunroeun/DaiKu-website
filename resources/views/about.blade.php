@@ -812,7 +812,6 @@
         color: #333;
     }
 </style>
-
 <script>
     const contents = [
         {
@@ -876,12 +875,14 @@
 
     // Drag states
     let isDragging = false;
+    let hasMoved = false; // Tracks if actual drag intent occurred
     let startX = 0;
     let dragOffset = 0;
     const dragSensitivity = 1.0; 
 
     function startDrag(x) {
         isDragging = true;
+        hasMoved = false;
         startX = x;
         dragOffset = 0;
         track.classList.add('no-transition');
@@ -893,29 +894,30 @@
         
         dragOffset = (x - startX) * dragSensitivity;
 
+        // If the movement passes a tiny threshold, confirm it's an active drag action
+        if (Math.abs(dragOffset) > 2) {
+            hasMoved = true;
+        }
+
         const circles = track.querySelectorAll('.circle');
         const currentGap = window.innerWidth <= 640 ? 50 : 80;
         const stepWidth = circles[currentIndex] ? (circles[currentIndex].offsetWidth / 2) + currentGap : 200;
 
         // Strict Edge Checking with smoothed coordinate handoff
         if (dragOffset > stepWidth) {
-            // Dragging Right -> trying to go to previous item
             if (currentIndex === 0) {
                 updateLayout(dragOffset);
                 return;
             }
             currentIndex = currentIndex - 1;
-            // Instead of resetting to 0, offset startX so the movement carries over flawlessly
             startX += stepWidth; 
             dragOffset = x - startX;
         } else if (dragOffset < -stepWidth) {
-            // Dragging Left -> trying to go to next item
             if (currentIndex === contents.length - 1) {
                 updateLayout(dragOffset);
                 return;
             }
             currentIndex = currentIndex + 1;
-            // Instead of resetting to 0, offset startX so the movement carries over flawlessly
             startX -= stepWidth; 
             dragOffset = x - startX;
         }
@@ -927,12 +929,23 @@
         if (!isDragging) return;
         isDragging = false;
         wrapper.classList.remove('dragging');
+        
+        // Force browser geometry sync before reenabling CSS animation transitions
+        track.offsetHeight; 
         track.classList.remove('no-transition');
 
-        // Reset the offset and trigger CSS smooth-snapping right back to where it belongs
+        // Reset the offset and snap clean to dead center
         dragOffset = 0;
         updateLayout(0);
     }
+
+    // Completely intercept and discard any native click handlers if a drag took place
+    wrapper.addEventListener('click', e => {
+        if (hasMoved) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+    }, true); // Global capture phase hook
 
     // Auto-recenter baseline if screen orientation or browser sizes change
     window.addEventListener('resize', () => updateLayout(0));
@@ -954,7 +967,6 @@
     createSlides();
     setTimeout(() => updateLayout(0), 50);
 </script>
-
 
     {{-- ===== FAQ ===== --}}
     <section class="bg-white py-20 px-4 md:px-6 border-b border-slate-200" id="faqs-section">
