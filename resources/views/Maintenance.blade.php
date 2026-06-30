@@ -3,7 +3,13 @@
 @section('title', 'AC Maintenance Plans - Daiku MEP Cambodia')
 
 @section('content')
-{{-- HERO --}}
+{{-- =========================================================
+     HERO SECTION
+     - Uses home_clip CSS clip-path for diagonal shape
+     - Background image: lg:block (desktop only)
+     - Desktop height: lg:min-h-[780px]
+     - Title/paragraph button: edit lines below
+========================================================= --}}
 <div class="relative -top-[30px] lg:-top-[400px] home_clip
             min-h-[420px] sm:min-h-[500px] lg:min-h-[780px] overflow-hidden">
 
