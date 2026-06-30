@@ -10,7 +10,7 @@
 
         {{-- Title --}}
         <h1 class="text-2xl md:text-3xl font-bold text-[#F26A27] mb-8">
-            Mechanical Systems
+            Electrical Systems
         </h1>
 
         {{-- Row 1: Image Left + Text Right --}}

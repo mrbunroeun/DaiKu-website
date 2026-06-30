@@ -11,7 +11,7 @@
         {{-- Title Box --}}
         <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 bg-white px-8 py-4 rounded">
             <h1 class="text-3xl font-bold text-[#F26A27]">
-                Mechanical Systems
+                Plumbing & Fire Protection Systems
             </h1>
         </div>
 

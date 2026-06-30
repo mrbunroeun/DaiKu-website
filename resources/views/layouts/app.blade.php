@@ -464,7 +464,7 @@
     </div>
 
    @unless (request()->routeIs('home', 'about', 'career', 'project', 'maintenance', 'contact'))
-<div class="hidden lg:block absolute bottom-[-600px] xl:bottom-[-850px] left-1/2 -translate-x-1/2 z-30 pointer-events-none">
+<div class="hidden lg:block absolute bottom-[-200px] sm:bottom-[-300px] md:bottom-[-400px] lg:bottom-[-400px] xl:bottom-[-550px] left-1/2 -translate-x-1/2 z-30 pointer-events-none">
     <img src="{{ asset('assets/images/shapes/Frame2.png') }}" alt="" aria-hidden="true"
          class="w-screen max-w-none h-auto">
 </div>

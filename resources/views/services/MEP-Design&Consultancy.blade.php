@@ -1,5 +1,4 @@
 @extends('layouts.app')
-<!-- @section('title', 'Mechanical Systems - Daiku MEP Cambodia') -->
 @section('css')
 @endsection
 

@@ -9,7 +9,7 @@
             <div
                 class="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-30 px-5 sm:px-8 py-3 sm:py-4 rounded text-center">
                 <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#F26A27] whitespace-nowrap">
-                    Mechanical Systems
+                    MEP Design & Consultancy
                 </h1>
             </div>
         </div>
