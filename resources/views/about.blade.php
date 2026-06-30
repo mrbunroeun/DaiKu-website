@@ -204,93 +204,77 @@
 @endsection
 
 @section('content')
+{{-- desktop and mobile responsive  --}}
+<div
+        class="relative top-[-260px] sm:top-[-100px] lg:-top-[400px] home_clip
+        min-h-[420px] sm:min-h-[500px] lg:min-h-[780px] overflow-hidden">
 
-{{-- ─── MOBILE (< lg) ─────────────────────────────────────────── --}}
-<div class="lg:hidden
-            bg-[#F26A27]
-            h-[320px] md:h-[650px]
-            [clip-path:polygon(0%_0%,35%_14%,100%_0%,100%_78%,0%_98%)]
-            min-h-full
-            -mt-[300px]">
+        {{-- Background Color (mobile only, sits behind the shape image, shorter height) --}}
+        <div class="absolute top-0 left-0 w-full h-[340px] bg-[#F26A27] block lg:hidden -z-10"></div>
 
-    <img src="{{ asset('assets/images/line_style.png') }}" alt=""
-        class="w-full pt-4 md:pt-8"
-        data-aos="fade-up" data-aos-duration="1000">
+        {{-- Background Shape (mobile) --}}
+        <img src="{{ asset('assets/images/shapes/style.png') }}" alt=""
+            class="absolute top-0 left-0 w-full
+        block lg:hidden
+        origin-center
+        -rotate-2
+        scale-150
+        z-1000
+        pointer-events-none"
+            data-aos="fade-up" data-aos-duration="1000">
 
-    <div class="flex flex-col items-center justify-center
-                text-center text-white
-                px-4 space-y-0 -mt-6 md:-mt-10
-                flex-1 overflow-hidden">
+        {{-- Background Shape (desktop) --}}
+        <img src="{{ asset('assets/images/shapes/style.png') }}" alt=""
+            class="absolute top-0 left-0 w-full
+        hidden lg:block
+        origin-center
+        -rotate-2
+        scale-150
+        z-0
+        pointer-events-none"
+            data-aos="fade-up" data-aos-duration="1000">
 
-        <h1 class="text-[24px] md:text-[36px] font-[700] w-full text-center"
-            data-aos="fade-down" data-aos-duration="800">
-            About Daiku
-        </h1>
+        {{-- Hero Content --}}
+        <div class="absolute inset-0 flex justify-center items-start z-20">
 
-        <p class="text-[13px] md:text-[15px] leading-relaxed max-w-xl"
-            data-aos="fade-up" data-aos-duration="900" data-aos-delay="100">
-            Providing HVAC, Electrical, Plumbing, Fire Protection, and Air Conditioning Maintenance Services
-            for commercial, industrial, hospitality, healthcare, and residential projects across Cambodia.
-        </p>
+            <div class="w-full max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-center text-white lg:pt-[280px]">
 
-        <div class="flex flex-row flex-wrap items-center justify-center gap-4 pt-2">
-            <a href="{{ route('project') }}"
-                class="w-52 h-12 flex items-center justify-center
-                       bg-[#2B3D4F] hover:bg-[#243342]
-                       text-white rounded-lg font-semibold text-[13px] transition"
-                data-aos="fade-up" data-aos-duration="900" data-aos-delay="300">
-                View Our Projects
-            </a>
+                <h1
+                    class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl​​ lg:mt-[0rem] sm:mt-[8rem] mt-[5rem] font-bold leading-tight">
+                    About Daiku
+                </h1>
+
+                <p class="mt-6 max-w-3xl mx-auto text-center text-xs sm:text-sm md:text-base leading-7" data-aos="fade-up"
+                    data-aos-duration="900" data-aos-delay="100">
+                    Providing HVAC, Electrical, Plumbing, Fire Protection, and Air Conditioning Maintenance Services for commercial, industrial, hospitality, healthcare, and residential projects across Cambodia.
+                </p>
+
+                <div class="flex justify-center mt-6 sm:mt-8" data-aos="fade-up" data-aos-duration="900"
+                    data-aos-delay="300">
+                    <a href="{{ route('project') }}"
+                        class="w-40 h-10 text-xs
+      sm:w-44 sm:h-11 sm:text-sm
+      md:w-56 md:h-14 md:text-base
+      flex items-center justify-center
+      bg-[#2B3D4F] hover:bg-[#243342]
+      text-white rounded-lg font-semibold transition">
+                        View Our Projects
+                    </a>
+                </div>
+            </div>
+
         </div>
+
     </div>
-</div>
 
-{{-- ─── DESKTOP (lg+) ───────────────────────────────────────────── --}}
-<div class="hidden lg:block
-            relative -top-[60px] xl:-top-[80px] 2xl:-top-[100px]
-            bg-[#F26A27]
-            h-[750px] xl:h-[800px]
-            home_clip min-h-full z-50 -mt-[200px]">
 
-    <img src="{{ asset('assets/images/line_style.png') }}" alt=""
-        class="relative w-full
-               pt-10 xl:pt-16 2xl:pt-20
-               -top-10 xl:-top-16 2xl:-top-32"
-        data-aos="fade-up" data-aos-duration="1000">
 
-    <div id="company_background"
-        class="relative w-full max-w-3xl xl:max-w-4xl mx-auto
-               flex flex-col items-center justify-start
-               pt-6 xl:pt-10 2xl:pt-12
-               text-center text-white
-               text-[16px] font-[400]
-               space-y-6 px-4
-               -top-10 xl:-top-16 2xl:-top-32
-               overflow-hidden">
 
-        <h1 class="text-[40px] xl:text-[44px] font-[700] w-full text-center"
-            data-aos="fade-down" data-aos-duration="800">
-            About Daiku
-        </h1>
 
-        <p class="text-center text-[16px] leading-relaxed max-w-2xl"
-            data-aos="fade-up" data-aos-duration="900" data-aos-delay="100">
-            Providing HVAC, Electrical, Plumbing, Fire Protection, and Air Conditioning Maintenance Services
-            for commercial, industrial, hospitality, healthcare, and residential projects across Cambodia.
-        </p>
+    
 
-        <div class="flex flex-row flex-wrap items-center justify-center gap-6 pt-2">
-            <a href="{{ route('project') }}"
-                class="w-56 h-14 flex items-center justify-center
-                       bg-[#2B3D4F] hover:bg-[#243342]
-                       text-white rounded-lg font-semibold text-[14px] transition"
-                data-aos="fade-up" data-aos-duration="900" data-aos-delay="300">
-                View Our Projects
-            </a>
-        </div>
-    </div>
-</div>
-<div class="relative w-full">
+
+    <div class="relative w-full  mt-[-20rem]  sm-:mt-[-24rem] lg:mt-[-30rem]">
 
     {{-- Text Section --}}
     <div class="text-start max-w-7xl mx-auto px-4 py-8">
@@ -764,7 +748,6 @@
 <section class="bg-white py-20 px-4 md:px-6 border-b border-slate-200" id="faqs-section">
     <div class="max-w-4xl mx-auto">
         <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="800">
-            <span class="text-orange-500 text-xs font-extrabold uppercase tracking-wide block mb-2">Support Center</span>
             <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Frequently Asked Questions</h2>
             <div class="w-12 h-1 bg-orange-500 mx-auto mt-3 rounded-full"></div>
         </div>
