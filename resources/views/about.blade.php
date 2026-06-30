@@ -686,8 +686,7 @@
 <section class="mission-section">
     <div class="circle-wrapper" id="wrapper">
         <div class="circle-track" id="track">
-            <!-- JS will fill this -->  
-        </div>
+            </div>
     </div>
 
     <div class="content-box">
@@ -700,16 +699,19 @@
     .mission-section {
         text-align: center;
         padding: 80px 20px 60px;
+        overflow: hidden; /* Prevents unwanted horizontal scrollbars on the page */
     }
 
     .circle-wrapper {
         display: flex;
         justify-content: center;
+        align-items: center;
         overflow: hidden;
         margin-bottom: 40px;
         cursor: grab;
         user-select: none;
         touch-action: pan-y;
+        width: 100%;
     }
 
     .circle-wrapper.dragging {
@@ -719,9 +721,11 @@
     .circle-track {
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 80px;
         transition: transform 0.45s cubic-bezier(0.32, 0.72, 0, 1);
         padding: 20px 0;
+        will-change: transform;
     }
 
     .circle-track.no-transition {
@@ -736,7 +740,10 @@
         justify-content: center;
         overflow: hidden;
         flex-shrink: 0;
-        transition: all 0.4s ease;
+        transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1), 
+                    width 0.4s ease, 
+                    height 0.4s ease, 
+                    box-shadow 0.4s ease;
     }
 
     .circle.small {
@@ -811,20 +818,20 @@
 
     function createSlides() {
         track.innerHTML = '';
-
         contents.forEach((item, i) => {
             const div = document.createElement('div');
-            div.className = `circle ${i === 1 ? 'main active' : 'small'}`;
+            div.className = `circle`;
             div.innerHTML = `<img src="${item.image}" alt="${item.title}">`;
             track.appendChild(div);
         });
     }
 
-    function updateLayout() {
+    function updateLayout(offset = 0) {
         const circles = track.querySelectorAll('.circle');
         
+        // 1. Assign correct size classes & sync texts
         circles.forEach((circle, i) => {
-            circle.classList.remove('main', 'active');
+            circle.classList.remove('main', 'active', 'small');
             if (i === currentIndex) {
                 circle.classList.add('main', 'active');
             } else {
@@ -834,27 +841,57 @@
 
         document.getElementById('title').textContent = contents[currentIndex].title;
         document.getElementById('description').textContent = contents[currentIndex].description;
+
+        // 2. Lock-to-Center Math Formula
+        const targetCircle = circles[currentIndex];
+        if (targetCircle) {
+            const trackCenter = track.offsetWidth / 2;
+            const circleCenter = targetCircle.offsetLeft + (targetCircle.offsetWidth / 2);
+            
+            // Computes positional gap and factors in live dragging displacement
+            const finalTranslate = (trackCenter - circleCenter) + offset;
+            track.style.transform = `translateX(${finalTranslate}px)`;
+        }
     }
 
-    // Drag variables
+    // Drag states
     let isDragging = false;
     let startX = 0;
-    let prevTranslate = 0;
-    let currentTranslate = 0;
-    const threshold = 65;
+    let dragOffset = 0;
+    const dragSensitivity = 1.0; 
 
     function startDrag(x) {
         isDragging = true;
         startX = x;
-        currentTranslate = prevTranslate;
+        dragOffset = 0;
         track.classList.add('no-transition');
         wrapper.classList.add('dragging');
     }
 
     function moveDrag(x) {
         if (!isDragging) return;
-        currentTranslate = prevTranslate + (x - startX);
-        track.style.transform = `translateX(${currentTranslate}px)`;
+        
+        dragOffset = (x - startX) * dragSensitivity;
+
+        const circles = track.querySelectorAll('.circle');
+        // Dynamic threshold tracking based on current item sizes and current responsive CSS gaps
+        const currentGap = window.innerWidth <= 640 ? 50 : 80;
+        const stepWidth = circles[currentIndex] ? (circles[currentIndex].offsetWidth / 2) + currentGap : 200;
+
+        // Infinite Wrap-Around Checks
+        if (dragOffset > stepWidth) {
+            // Dragged past threshold rightwards -> go backwards
+            currentIndex = (currentIndex - 1 + contents.length) % contents.length;
+            startX = x; 
+            dragOffset = 0;
+        } else if (dragOffset < -stepWidth) {
+            // Dragged past threshold leftwards -> go forwards
+            currentIndex = (currentIndex + 1) % contents.length;
+            startX = x; 
+            dragOffset = 0;
+        }
+
+        updateLayout(dragOffset);
     }
 
     function endDrag() {
@@ -863,22 +900,15 @@
         wrapper.classList.remove('dragging');
         track.classList.remove('no-transition');
 
-        const moved = currentTranslate - prevTranslate;
-
-        if (moved > threshold) {
-            currentIndex = (currentIndex - 1 + contents.length) % contents.length;
-        } else if (moved < -threshold) {
-            currentIndex = (currentIndex + 1) % contents.length;
-        }
-
-        // Snap back to center
-        prevTranslate = 0;
-        track.style.transform = 'translateX(0px)';
-        
-        updateLayout();
+        // Reset the offset and trigger CSS smooth-snapping right into place
+        dragOffset = 0;
+        updateLayout(0);
     }
 
-    // Events
+    // Auto-recenter baseline if screen orientation or browser sizes change
+    window.addEventListener('resize', () => updateLayout(0));
+
+    // Desktop Mouse Events
     wrapper.addEventListener('mousedown', e => {
         e.preventDefault();
         startDrag(e.clientX);
@@ -886,15 +916,15 @@
     window.addEventListener('mousemove', e => moveDrag(e.clientX));
     window.addEventListener('mouseup', endDrag);
 
+    // Mobile/Tablet Touch Events
     wrapper.addEventListener('touchstart', e => startDrag(e.touches[0].clientX));
     wrapper.addEventListener('touchmove', e => moveDrag(e.touches[0].clientX));
     wrapper.addEventListener('touchend', endDrag);
 
-    // Initialize
+    // Initial Bootstrap Execution
     createSlides();
-    updateLayout();
+    setTimeout(() => updateLayout(0), 50);
 </script>
-
     {{-- ===== FAQ ===== --}}
     <section class="bg-white py-20 px-4 md:px-6 border-b border-slate-200" id="faqs-section">
         <div class="max-w-4xl mx-auto">
