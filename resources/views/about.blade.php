@@ -372,7 +372,7 @@
 
 
     {{-- ===== INDUSTRIES WE SERVE ===== --}}
-    <div class="w-full max-w-5xl mx-auto px-4 mt-10 mb-16 text-center">
+    <div class="w-full max-w-5xl mx-auto px-4 mt-10 mb-16 text-center ">
         <h2 class="text-[20px] md:text-[26px] font-[700] mb-10" style="color:#F26A27;" data-aos="fade-down"
             data-aos-duration="800">
             Industries We Serve
@@ -426,7 +426,7 @@
 
     </div>
     {{-- Why Choose Daiku --}}
-    <div class="relative w-full mt-46 md:mt-[120px]">
+    <div class="relative w-full mt-16 md:mt-[80px]">
 
         {{-- ── ORANGE BACKGROUND (diagonal) ── --}}
 
@@ -439,7 +439,7 @@
         {{-- ── HUMAN PHOTO (desktop only) ── --}}
         <img src="{{ asset('assets/images/whychoos-us/Mask1.png') }}" alt="Daiku Engineer"
             class="absolute left-0 bottom-[-1%]
-           h-[120%] lg:h-[130%] xl:h-[140%]
+           h-[120%] lg:h-[110%] xl:h-[120%]
            w-auto max-w-[50%] lg:max-w-[52%] xl:max-w-[55%]
            object-contain object-left-bottom
            rotate-4
@@ -561,9 +561,9 @@
             @php
                 $teamMembers = [
                     [
-                        'name' => ' 1. Mr. PHAN Tola',
+                        'name' => ' Mr. PHAN Tola',
                         'position' => 'Managing Director',
-                        'image' => 'assets/images/photo/',
+                        'image' => 'assets/images/photo/Phan Tola.png',
                     ],
                     [
                         'name' => 'Mr. THY Somphon',
@@ -594,7 +594,7 @@
                     [
                         'name' => 'Mr. NAO Chanrithy',
                         'position' => 'MEP Site Engineer',
-                        'image' => 'assets/images/photo/',
+                        'image' => 'assets/images/photo/Nao Chanrithy.png',
                     ],
                 ];
             @endphp
@@ -675,151 +675,231 @@
     <div class="relative w-full" style="margin-top:0;">
         <div class="relative w-full" style="overflow:hidden;">
             <div class="absolute inset-0"
-                style="background-color:#F26A27; clip-path:polygon(0 32%,100% 8%,100% 100%,0 100%); z-index:0;"></div>
+                style="background-color:#12001c; clip-path:polygon(0 32%,100% 8%,100% 100%,0 100%); z-index:0;"></div>
             <div class="absolute top-0 left-0 w-full"
                 style="height:100%; background-color:#1F2D3D; clip-path:polygon(0 28%,100% 4%,100% 8%,0 32%); z-index:1;">
             </div>
         </div>
     </div>
 
-    {{-- ===== MISSION / VISION ===== --}}
-    <section class="mission-section">
-        <div class="circle-wrapper">
-            <div class="circle small"><img src="" alt=""></div>
-            <div class="circle main"><img src="" alt=""></div>
-            <div class="circle small"><img src="" alt=""></div>
+{{-- ===== MISSION / VISION ===== --}}
+<section class="mission-section">
+    <div class="circle-wrapper" id="wrapper">
+        <div class="circle-track" id="track">
+            <!-- JS will fill this -->
         </div>
-        <div class="content-box">
-            <h2 id="title"></h2>
-            <p id="description"></p>
-        </div>
-    </section>
+    </div>
 
+    <div class="content-box">
+        <h2 id="title">Mission</h2>
+        <p id="description"></p>
+    </div>
+</section>
 
-    {{-- ===== NOTABLE CLIENTS ===== --}}
+<style>
+    .mission-section {
+        text-align: center;
+        padding: 120px 20px 80px;
+    }
 
+    .circle-wrapper {
+        overflow: hidden;
+        margin-bottom: 40px;
+        cursor: grab;
+        user-select: none;
+        touch-action: pan-y;
+    }
 
-    <style>
-        .mission-section {
-            text-align: center;
-            padding: 120px 20px 60px;
+    .circle-wrapper.dragging {
+        cursor: grabbing;
+    }
+
+    .circle-track {
+        display: flex;
+        align-items: center;
+        gap: 90px;
+        transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+        padding: 30px 0;
+        width: max-content;
+    }
+
+    .circle-track.no-transition {
+        transition: none;
+    }
+
+    .circle {
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        flex-shrink: 0;
+        width: 140px;
+        height: 140px;
+        transition: width 0.4s ease, height 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .circle.active {
+        width: 240px;
+        height: 240px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+    }
+
+    .circle img {
+        width: 85%;
+        height: 85%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    @media (max-width: 640px) {
+        .circle { width: 90px; height: 90px; }
+        .circle.active { width: 170px; height: 170px; }
+        .circle-track { gap: 50px; }
+    }
+
+    .content-box {
+        max-width: 800px;
+        margin: auto;
+        padding: 0 16px;
+    }
+
+    .content-box h2 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .content-box p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+</style>
+
+<script>
+    const contents = [
+        {
+            title: "Mission",
+            image: "{{ asset('assets/images/icone/image-18.png') }}",
+            description: "Our mission is to lead in Mechanical, Electrical, Plumbing, and Firefighting design, delivering international standard services."
+        },
+        {
+            title: "Vision",
+            image: "{{ asset('assets/images/icone/image-19.png') }}",
+            description: "Our vision is to become the most trusted MEP engineering consultancy in Cambodia and the region."
+        },
+        {
+            title: "Core Value",
+            image: "{{ asset('assets/images/icone/image-20.png') }}",
+            description: "Integrity, Quality, Innovation, Teamwork and Customer Satisfaction are the foundation of our success."
         }
+    ];
 
-        .circle-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 80px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
+    const track = document.getElementById('track');
+    const wrapper = document.getElementById('wrapper');
 
-        .circle {
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all .3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+    const SMALL = 140;
+    const GAP = 90;
+    const STEP = SMALL + GAP; // distance between two circle centers at rest
 
-        .circle:hover {
-            transform: scale(1.05);
-        }
+    let currentIndex = 0;
 
-        .circle.small {
-            width: 140px;
-            height: 140px;
-        }
-
-        @media (max-width:640px) {
-            .circle.small {
-                width: 90px;
-                height: 90px;
-            }
-
-            .circle.main {
-                width: 160px;
-                height: 160px;
-            }
-        }
-
-        .circle.main {
-            width: 240px;
-            height: 240px;
-        }
-
-        .circle img {
-            width: 80%;
-            height: 80%;
-        }
-
-        .content-box {
-            max-width: 800px;
-            margin: auto;
-            padding: 0 16px;
-        }
-
-        .content-box h2 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .content-box p {
-            font-size: 15px;
-            line-height: 1.8;
-        }
-    </style>
-
-    <script>
-        const contents = [{
-                title: "Mission",
-                image: "{{ asset('assets/images/icone/image-18.png') }}",
-                description: "Our mission is to lead in Mechanical, Electrical, Plumbing, and Firefighting design, delivering international standard services."
-            },
-            {
-                title: "Vision",
-                image: "{{ asset('assets/images/icone/image-19.png') }}",
-                description: "Our vision is to become the most trusted MEP engineering consultancy in Cambodia and the region."
-            },
-            {
-                title: "Core Value",
-                image: "{{ asset('assets/images/icone/image-20.png') }}",
-                description: "Integrity, Quality, Innovation, Teamwork and Customer Satisfaction are the foundation of our success."
-            }
-        ];
-        let current = 0;
-        const circles = document.querySelectorAll('.circle img');
-        const circleBoxes = document.querySelectorAll('.circle');
-
-        function render() {
-            const left = (current - 1 + contents.length) % contents.length;
-            const right = (current + 1) % contents.length;
-            circles[0].src = contents[left].image;
-            circles[1].src = contents[current].image;
-            circles[2].src = contents[right].image;
-            document.getElementById('title').innerText = contents[current].title;
-            document.getElementById('description').innerText = contents[current].description;
-        }
-        circleBoxes[0].addEventListener('click', () => {
-            current = (current - 1 + contents.length) % contents.length;
-            render();
+    function createSlides() {
+        track.innerHTML = '';
+        contents.forEach((item, i) => {
+            const div = document.createElement('div');
+            div.className = 'circle';
+            div.dataset.index = i;
+            div.innerHTML = `<img src="${item.image}" alt="${item.title}">`;
+            track.appendChild(div);
         });
-        circleBoxes[1].addEventListener('click', () => {
-            render();
+    }
+
+    function updateText(idx) {
+        document.getElementById('title').textContent = contents[idx].title;
+        document.getElementById('description').textContent = contents[idx].description;
+    }
+
+    function setActive(idx) {
+        [...track.children].forEach((c, i) => {
+            c.classList.toggle('active', i === idx);
         });
-        circleBoxes[2].addEventListener('click', () => {
-            current = (current + 1) % contents.length;
-            render();
+    }
+
+    // Position the track so `currentIndex`'s circle sits centered in the wrapper.
+    function getBaseOffset(index) {
+        const wrapperCenter = wrapper.offsetWidth / 2;
+        return wrapperCenter - (index * STEP) - (SMALL / 2);
+    }
+
+    function snapTo(index, animate = true) {
+        track.classList.toggle('no-transition', !animate);
+        track.style.transform = `translateX(${getBaseOffset(index)}px)`;
+        setActive(index);
+        updateText(index);
+        currentIndex = index;
+    }
+
+    // Drag logic
+    let isDragging = false;
+    let startX = 0;
+    let baseOffset = 0;
+
+    function startDrag(x) {
+        isDragging = true;
+        startX = x;
+        baseOffset = getBaseOffset(currentIndex);
+        track.classList.add('no-transition');
+        wrapper.classList.add('dragging');
+    }
+
+    function moveDrag(x) {
+        if (!isDragging) return;
+        const delta = x - startX;
+        const liveOffset = baseOffset + delta;
+        track.style.transform = `translateX(${liveOffset}px)`;
+
+        // Determine which circle is currently nearest the wrapper's center,
+        // live, so partial drag states (1 left/1 center/1 right, or
+        // 2 left/1 center, etc.) update the active highlight + text as you go.
+        const wrapperCenter = wrapper.offsetWidth / 2;
+        let closestIndex = currentIndex;
+        let closestDist = Infinity;
+        contents.forEach((_, i) => {
+            const circleCenterX = liveOffset + (i * STEP) + (SMALL / 2);
+            const dist = Math.abs(circleCenterX - wrapperCenter);
+            if (dist < closestDist) {
+                closestDist = dist;
+                closestIndex = i;
+            }
         });
-        setInterval(() => {
-            current = (current + 1) % contents.length;
-            render();
-        }, 3000);
-        render();
-    </script>
+        setActive(closestIndex);
+        updateText(closestIndex);
+    }
+
+    function endDrag() {
+        if (!isDragging) return;
+        isDragging = false;
+        wrapper.classList.remove('dragging');
+        track.classList.remove('no-transition');
+
+        // Snap fully to whichever circle is currently marked active.
+        const activeEl = track.querySelector('.circle.active');
+        const idx = activeEl ? parseInt(activeEl.dataset.index, 10) : currentIndex;
+        snapTo(idx, true);
+    }
+
+    wrapper.addEventListener('mousedown', e => { e.preventDefault(); startDrag(e.clientX); });
+    window.addEventListener('mousemove', e => moveDrag(e.clientX));
+    window.addEventListener('mouseup', endDrag);
+
+    wrapper.addEventListener('touchstart', e => startDrag(e.touches[0].clientX));
+    wrapper.addEventListener('touchmove', e => moveDrag(e.touches[0].clientX));
+    wrapper.addEventListener('touchend', endDrag);
+
+    createSlides();
+    snapTo(0, false);
+</script>
 
     {{-- ===== FAQ ===== --}}
     <section class="bg-white py-20 px-4 md:px-6 border-b border-slate-200" id="faqs-section">
