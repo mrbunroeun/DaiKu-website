@@ -82,15 +82,9 @@
     <div class="w-full max-w-4xl mx-auto text-center sm:pt-20 padding_section -mt-[-60px]">
         <div class="flex flex-col items-center justify-center leading-none">
 
-            <h2 class="text-semibold text-[14px] sm:text-[16px] md:text-[20px] lg:text-[30px]
-                       text-[#2b3d4f] md:text-[#ffffff] uppercase"
-                data-aos="fade-up" data-aos-duration="1000">
-                Welcome to
-            </h2>
 
-            <h1 class="text-[#f26b27]
-                       font-bold
-                       text-[clamp(24px,4vw,60px)]"
+            <h1 class=" text-semibold text-[14px] sm:text-[16px] md:text-[20px] lg:text-[30px]
+                       text-[#2b3d4f] md:text-[#ffffff] uppercase"
                 data-aos="fade-up"
                 data-aos-duration="1500">
 
