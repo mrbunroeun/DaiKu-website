@@ -87,52 +87,52 @@
      - Background color: bg-[#F26A27] on line 85
      - Height: h-[750px] xl:h-[800px] on the wrapper div
 ========================================================= --}}
-    <div class="hidden lg:block relative
-        bg-[#F26A27] overflow-hidden
-        h-[600px] xl:h-[650px] 2xl:h-[650px]
-        mt-[-35rem] xl:mt-[-20rem]"
-        style="clip-path: polygon(35% 12%, 100% 0, 100% 78%, 0 100%, 0 0);
-           -webkit-clip-path: polygon(35% 12%, 100% 0, 100% 78%, 0 100%, 0 0);">
+    <div
+        class="relative -top-[30px] lg:-top-[400px] home_clip
+            min-h-[420px] sm:min-h-[500px] lg:min-h-[780px] overflow-hidden">
 
-        {{-- Line decoration --}}
-        <img src="{{ asset('assets/images/line_style.png') }}" alt="" class="w-full" data-aos="fade-up"
-            data-aos-duration="1000">
+        {{-- Background Shape --}}
+        <img src="{{ asset('assets/images/shapes/style.png') }}" alt=""
+            class="absolute top-0 left-0 w-full
+            hidden lg:block
+            origin-center
+            -rotate-2
+            scale-400
+            pointer-events-none"
+            data-aos="fade-up" data-aos-duration="1000">
 
-        {{-- Content --}}
-        <div id="company_background"
-            class="relative w-full max-w-3xl xl:max-w-4xl mx-auto
-           flex flex-col items-center justify-center
-           text-center text-white
-           space-y-5 px-4
-           h-full
-           mt-[-5rem]">
+        {{-- Hero Content --}}
+        <div class="absolute  inset-0 flex justify-center items-start  z-20">
 
-            <h1 class="relative mt-[-12rem] text-[36px] xl:text-[40px] font-[700] w-full text-center" data-aos="fade-down"
-                data-aos-duration="800">
-                About Daiku
-            </h1>
+            <div class="w-full max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-center text-white lg:pt-[280px]">
 
-            <p class="relative text-center text-[15px] leading-relaxed max-w-2xl" data-aos="fade-up" data-aos-duration="900"
-                data-aos-delay="100">
-                Providing HVAC, Electrical, Plumbing, Fire Protection, and Air Conditioning Maintenance Services
-                for commercial, industrial, hospitality, healthcare, and residential projects across Cambodia.
-            </p>
+                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight">
+                    Professional MEP Engineering & HVAC
+                    Solutions in Cambodia <br class="hidden lg:block">
 
-            <div class=" relative flex flex-row flex-wrap items-center justify-center gap-5 pt-2">
-                <a href="{{ route('project') }}"
-                    class="w-52 h-12 flex items-center justify-center
-                   bg-[#2B3D4F] hover:bg-[#243342]
-                   text-white rounded-lg font-semibold text-[13px] transition">
-                    Explore Our Services
-                </a>
-                <a href="{{ route('project') }}"
-                    class="w-52 h-12 flex items-center justify-center
-                   bg-[#2B3D4F] hover:bg-[#243342]
-                   text-white rounded-lg font-semibold text-[13px] transition">
-                    View Our Projects
-                </a>
+                </h1>
+
+                <p class="mt-6 max-w-3xl mx-auto text-center text-sm sm:text-base leading-8" data-aos="fade-up"
+                    data-aos-duration="900" data-aos-delay="100">
+                    Design, installation, maintenance, and consultancy services for HVAC, electrical, plumbing, and fire
+                    protection systems across commercial, industrial, and residential projects.
+                </p>
+
+                <div class="flex justify-center mt-8" data-aos="fade-up" data-aos-duration="900" data-aos-delay="300">
+
+                    <a href="{{ route('project') }}"
+                        class="w-56 h-14 flex items-center justify-center
+                          bg-[#2B3D4F] hover:bg-[#243342]
+                          text-white rounded-lg font-semibold transition">
+                        View Our Projects
+                    </a>
+
+                </div>
+
             </div>
+
         </div>
+
     </div>
 
 

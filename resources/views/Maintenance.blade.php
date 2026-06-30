@@ -65,7 +65,13 @@
 
 </div>
 
-{{-- Section: FREE Inspection --}}
+{{-- =========================================================
+     SECTION: FREE Inspection
+     Desktop: lg:flex-row (side by side)
+     Mobile: flex-col (stacked)
+     - Text column: line ~85
+     - Image column: line ~99
+========================================================= --}}
 <div class="relative z-50  pt-6 pb-16">
     <div class="max-w-6xl mx-auto px-4">
         <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-10">
@@ -116,7 +122,13 @@
     </div>
 </div>
 
-{{-- Section: Why Annual Maintenance Matters --}}
+{{-- =========================================================
+     SECTION: Why Annual Maintenance Matters
+     Desktop: lg:flex-row (side by side)
+     Mobile: flex-col (stacked)
+     - Image column: line ~135
+     - Text column: line ~148
+========================================================= --}}
 <div class="relative z-50 py-16">
     <div class="max-w-6xl mx-auto px-4">
         <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-10">
@@ -166,7 +178,13 @@
     </div>
 </div>
 
-{{-- Section: Benefits of Daiku AMC --}}
+{{-- =========================================================
+     SECTION: Benefits of Daiku AMC
+     Desktop: lg:flex-row (side by side)
+     Mobile: flex-col (stacked)
+     - Image column: line ~191
+     - Text column: line ~201
+========================================================= --}}
 <div class="relative z-50 py-16">
     <div class="max-w-6xl mx-auto px-4">
         <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-10">
@@ -225,7 +243,13 @@
     </div>
 </div>
 
-{{-- Section: Exclusive Annual Contract - Residential --}}
+{{-- =========================================================
+     SECTION: Exclusive Annual Contract - Residential
+     Desktop: lg:flex-row (side by side)
+     Mobile: flex-col (stacked)
+     - Text column: line ~252
+     - Image column: line ~268
+========================================================= --}}
 <div class="relative z-50 py-16">
     <div class="max-w-6xl mx-auto px-4">
         <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-10">
