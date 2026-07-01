@@ -78,19 +78,15 @@
 @endsection
 
 @section('content')
-    {{-- =========================================================
-     DESKTOP HERO SECTION (orange background - shown only on lg breakpoint and up)
-     ⚠️ EDIT THE TEXT BELOW FOR DESKTOP VIEW HERO
-     - Title: lines ~101-108
-     - Paragraph: lines ~113-121
-     - Button: lines ~124-135
-     - Background color: bg-[#F26A27] on line 85
-     - Height: h-[750px] xl:h-[800px] on the wrapper div
-========================================================= --}}
+
     <div
-        class="relative -top-[260px] max-[500px]:-top-[350px] lg:-top-[400px] home_clip
-        min-h-[420px] sm:min-h-[500px] lg:min-h-[780px] max-[1024px]:mt-[10rem] max-[724px]:mt-[5rem] max-[624px]:mt-[-4rem] overflow-hidden">
-        
+        class="absolute max-[1550px]:top-[50rem] max-[1280px]:top-[40rem] max-[1024px]:top-[27rem]
+        max-[850px]:top-[25rem] max-[650px]:top-[20rem] max-[490px]:top-[15rem] overflow-hidden">
+      
+
+        {{-- Background Color (mobile only, sits behind the shape image, shorter height) --}}
+        <div class="absolute top-[-2rem] mb-[-2rem] left-0 w-full h-[120px] bg-[#F26A27] block min-[600px]:hidden -z-10"></div>
+
         {{-- Background Shape (mobile) --}}
         <img src="{{ asset('assets/images/shapes/style.png') }}" alt=""
             class="relative top-0 left-0 w-full
@@ -102,34 +98,20 @@
         pointer-events-none"
             data-aos="fade-up" data-aos-duration="1000">
 
-        {{-- Background Shape (desktop) --}}
-
-        {{-- Background Color (mobile only, sits behind the shape image, shorter height) --}}
-        <div class="relative top-[9rem] left-0 w-full h-[200px] bg-[#F26A27] block lg:hidden -z-10"></div>
-
-        
-        {{-- <img src="{{ asset('assets/images/shapes/style.png') }}" alt=""
-            class="absolute top-0 left-0 w-full
-        hidden lg:block
-        origin-center
-        -rotate-2
-        scale-150
-        z-0
-        pointer-events-none"
-            data-aos="fade-up" data-aos-duration="1000"> --}}
+  
 
         {{-- Hero Content --}}
-        <div class="absolute inset-0 flex justify-center items-start z-20">
+        <div class="relative inset-0 flex justify-center items-start z-20  max-[1550px]:top-[-40rem] max-[1280px]:top-[-40rem] max-[1024px]:top-[-20rem] max-[850px]:top-[-15rem] max-[650px]:top-[-13rem] max-[490px]:top-[-9.5rem]">
 
             <div class="w-full max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-center text-white lg:pt-[280px]">
 
                 <h1
-                    class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl​​ lg:mt-[0rem] sm:mt-[8rem] mt-[5rem] font-bold leading-tight">
+                    class="max-[490px]:text-[15px] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl​​ font-bold leading-tight">
                     Professional MEP Engineering & HVAC <br>
                     Solutions in Cambodia
                 </h1>
 
-                <p class="mt-6 max-w-3xl mx-auto text-center text-xs sm:text-sm md:text-base leading-7" data-aos="fade-up"
+                <p class="mt-6 max-w-3xl mx-auto text-center max-[490px]:text-[10px] text-xs sm:text-sm md:text-base leading-7 max-[490px]:leading-[1.1]" data-aos="fade-up"
                     data-aos-duration="900" data-aos-delay="100">
                     Design, installation, maintenance, and consultancy services for HVAC, electrical, plumbing, and fire
                     protection systems across commercial, industrial, and residential projects.
@@ -154,17 +136,9 @@
     </div>
 
 
-
-    {{-- =========================================================
-     DESKTOP / LAPTOP VERSION (shown from lg breakpoint up)
-     ⚠️ DESKTOP SECTIONS BELOW - EDIT HERE:
-     - "About Daiku" title: line ~157
-     - Description: lines ~159-163
-     - Service cards: loop starting around line 171
-     - Background container: line 154
-========================================================= --}}
     {{-- ══════════════ ABOUT / SERVICES ══════════════ --}}
-    <div class="relative w-full mt-[-20rem]  sm-:mt-[-25rem] lg:mt-[-30rem] max-[490px]:mt-[-23rem]">
+    <div class="relative w-full   max-[1550px]:mt-[30rem] max-[1280px]:mt-[15rem] max-[1024px]:mt-[25rem]
+    max-[850px]:mt-[20rem] max-[650px]:mt-[5rem] max-[490px]:mt-[-1rem] ">
         <div class="flex flex-col items-center gap-5">
             <h1 class="text-xl sm:text-2xl md:text-3xl font-bold leading-none mb-4" style="color:#F26A27;"
                 data-aos="fade-down" data-aos-duration="800">
@@ -230,15 +204,15 @@
                     {{-- Fixed-ratio image box: same width/height ratio on every card --}}
                     <div class="w-full aspect-[4/3] overflow-hidden shrink-0 bg-[#1c2733]">
                         <img src="{{ asset($service['img']) }}" alt="{{ $service['title'] }}"
-                            class="w-full h-full object-cover {{ $service['pos'] }}">
+                            class="w-full h-full object-cover{{ $service['pos'] }}">
                     </div>
 
                     <div class="p-5 flex flex-col flex-1">
                         <h3 class="text-sm font-bold mb-2 text-[#ffffff]">{{ $service['title'] }}</h3>
                         <hr class="mb-3 border border-[#ffffff] opacity-50">
-                        <p class="text-xs leading-relaxed mb-5 flex-1 text-[#CBD5E1]">{{ $service['desc'] }}</p>
+                        <p class="text-xs leading-relaxed mb-5 flex-1 text-[#CBD5E1]  max-[500px]:text-[8px] ">{{ $service['desc'] }}</p>
                         <a href="{{ $service['route'] }}"
-                            class="self-start text-xs font-semibold px-6 py-2 rounded transition hover:opacity-80 bg-[#F26A27] text-white">
+                            class="self-start  max-[500px]:text-[10px] text-xs font-semibold px-6 py-2 rounded transition hover:opacity-80 bg-[#F26A27] text-white">
                             Explore Services
                         </a>
                     </div>
@@ -248,7 +222,7 @@
     </div>
 
     {{-- Industries We Serve --}}
-    <div class="w-full max-w-5xl mx-auto px-4 mt-10 mb-16 text-center">
+    <div class="relative w-full max-w-5xl mx-auto px-4 mt-10 mb-16 text-center">
         <h2 class="text-[20px] md:text-[26px] font-[700] mb-10" style="color:#F26A27;">
             Industries We Serve
         </h2>
@@ -583,7 +557,7 @@
 
         <div id="homeCardsWrapper"
             class="py-10 px-3 max-w-7xl mx-auto
-                grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5
+                grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5
                 gap-4 place-items-center">
 
             @foreach ($projects as $p)
@@ -606,10 +580,10 @@
 
                     <div class="py-4 px-4 bg-white flex flex-col h-full">
                         <p class="uppercase text-[#F26A27] font-bold text-[10px] mb-1">{{ $p['label'] }}</p>
-                        <h3 class="text-[#F26A27] text-sm font-semibold min-h-[48px] line-clamp-2 mb-2">
+                        <h3 class="text-[#F26A27] text-sm  max-[600px]:text-[12px] font-semibold min-h-[48px] line-clamp-2 mb-2">
                             {{ $p['title'] }}
                         </h3>
-                        <p class="text-gray-500 text-xs">{{ $p['loc'] }}</p>
+                        <p class="text-gray-500 text-xs  max-[600px]:text-[11px]">{{ $p['loc'] }}</p>
                     </div>
                 </div>
             @endforeach

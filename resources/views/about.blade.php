@@ -337,7 +337,7 @@
             ];
         @endphp
 
-        <div class="py-4 px-4 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="py-4 px-4 max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach ($services as $index => $service)
                 <div class="rounded-md overflow-hidden flex flex-col shadow-md" style="background-color:#2C3E50;"
                     data-aos="fade-up" data-aos-duration="700" data-aos-delay="{{ $index * 100 }}">

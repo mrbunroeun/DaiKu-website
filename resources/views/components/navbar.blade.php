@@ -1,11 +1,11 @@
 {{-- components/navbar.blade.php --}}
 <div class=" hidden min-[1210px]:block max-w-screen-2xl mx-auto px-6 xl:px-12 2xl:px-20 pt-3 pb-3">
-    <p class="text-white text-[11px]  leading-snug text-right max-[700px]:text-[2px]">
+    <p class="text-white text-[11px]  leading-snug text-right ">
         #99, Street 76CC, Trapiang Thleoung 1 Village,
-Chom Chao 1 Commune,<br>
-Pur Senchey District,
-Phnom Penh 098 954 328
-daikumep@gmail.com
+        Chom Chao 1 Commune,<br>
+        Pur Senchey District,
+        Phnom Penh 098 954 328
+        daikumep@gmail.com
     </p>
 </div>
 <section class="relative bg-[#2b3d4f] hidden min-[1210px]:block">
@@ -154,21 +154,17 @@ daikumep@gmail.com
     </div>
 </section>
 <div class="min-[1210px]:hidden px-4 pt-2 pb-1">
-    <p class="text-white text-[10px] leading-snug text-right">
-        No G 169 , Street ARATA, Sangkat Khmounh, Khan Sen Sok Phnom Penh Cambodia.<br>
-        a2zengineering.kh@gmail.com &nbsp; (+855) 67 39 3333 / (+855) 78 878 888
+    <p class="text-white text-[9px] leading-snug text-right">
+        #99, Street 76CC, Trapiang Thleoung 1 Village,
+        Chom Chao 1 Commune,<br>
+        Pur Senchey District,
+        Phnom Penh 098 954 328
+        daikumep@gmail.com
     </p>
 </div>
 {{-- ── MOBILE NAVBAR ── --}}
 <nav class="min-[1210px]:hidden relative z-50" style="background:var(--navy-light);">
 
-    {{-- Mobile contact strip --}}
-    {{-- <div class="pt-2 pb-2">
-    <p class="text-white text-[9px] leading-snug text-right">
-            No G 169 , Street ARATA, Sangkat Khmounh, Khan Sen Sok Phnom Penh Cambodia.<br>
-            a2zengineering.kh@gmail.com          (+855) 67 39 3333 / (+855) 78 878 888
-        </p>
-    </div> --}}
 
     <div class="max-w-screen-2xl mx-auto px-6 xl:px-12 2xl:px-20">
 

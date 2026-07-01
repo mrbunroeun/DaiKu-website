@@ -56,6 +56,11 @@
                         <li class="pl-5 list-none">Central Gas System (LPG)</li>
                     </ul>
                 </div>
+                 <div class="w-full md:w-1/2 order-1 md:order-2">
+                <img src="{{ asset('assets/images/service/22.png') }}"
+                    alt="Air Conditioning & Special Mechanical Systems"
+                    class="w-full h-60 sm:h-72 md:h-80 object-cover rounded shadow-lg">
+            </div>
                 
             </div>
         </div>

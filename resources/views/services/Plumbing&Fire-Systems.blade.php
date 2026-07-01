@@ -71,6 +71,12 @@ max-[1024px]:mt-[9rem] max-[640px]:mt-[-10rem]  max-[620px]:mt-[-7rem] max-[490p
                 </ul>
             </div>
             </div>
+            <div class="md:w-1/2">
+                <img src="{{ asset('assets/images/service/2.png') }}"
+                alt="Electrical Systems"
+                class="w-full h-80 object-cover  shadow-lg">
+
+            </div>
   
         </div>
     </div>

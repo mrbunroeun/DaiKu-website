@@ -450,7 +450,9 @@
         {{-- Background video --}}
         <video autoplay muted loop playsinline preload="none" aria-hidden="true">
             <source src="{{ url('assets/images/video.mp4') }}"  type="video/mp4">
-            <source src="{{ url('assets/images/video.webm') }}" type="video/webm">
+            <source src="{{ url('assets/images/video.mp4') }}"  type="video/mp4">
+        <img src="{{ asset('assets/images/shapes/style.png') }}" alt="">
+
         </video>
 
         {{-- Desktop Header (logo + contact bar) --}}
