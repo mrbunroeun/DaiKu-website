@@ -5,7 +5,7 @@
 @section('content')
 
 {{-- Section 1: Image Left, Text Right --}}
-<section class="relative z-50 py-16">
+<section class="relative z-50 py-16​ max-[1024px]:mt-[9rem] max-[640px]:mt-[-10rem]  max-[620px]:mt-[-7rem] max-[490px]:mt-[-13rem]">
     <div class="max-w-6xl mx-auto px-4">
 
         {{-- Title --}}

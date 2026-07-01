@@ -5,10 +5,10 @@
 @section('content')
 
 {{-- Section 1: Image Left, Text Right --}}
-<section class="relative z-50 py-16">
+<section class="relative z-50 py-16 max-[590px]:mt-[-30rem]">
     <div class="relative">
         {{-- Title Box --}}
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 bg-white px-8 py-4 rounded">
+        <div class="bottom-10 left-1/2 -translate-x-1/2 z-30 bg-white px-8 py-4 rounded">
             <h1 class="text-3xl font-bold text-[#F26A27]">
                 MEP Design & Consultancy
             </h1>
