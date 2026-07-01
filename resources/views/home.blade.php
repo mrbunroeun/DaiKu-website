@@ -164,10 +164,10 @@
     {{-- ══════════════ ABOUT / SERVICES ══════════════ --}}
     <div class="relative w-full mt-[-20rem]  sm-:mt-[-25rem] lg:mt-[-30rem] max-[490px]:mt-[-23rem]">
         <div class="flex flex-col items-center gap-5">
-            <h2 class="text-base sm:text-lg font-bold text-[#F26A27] mb-3 text-center">
+            <h1 class="text-xl sm:text-2xl md:text-3xl font-bold leading-none mb-4" style="color:#F26A27;"
+                data-aos="fade-down" data-aos-duration="800">
                 About Daiku
-            </h2>
-
+            </h1>
             <p class="text-center text-xs sm:text-sm max-w-3xl px-4 -mt-4 mb-10 text-[#2b3d4f]">
                 Daiku MEP Solution Co., Ltd provides professional Mechanical, Electrical, and Plumbing (MEP)
                 engineering services for commercial, industrial, hospitality, healthcare, and residential
@@ -457,6 +457,7 @@
                 </button>
             </div>
 
+
             <script>
                 const buttons = document.querySelectorAll('.filter-btn');
 
@@ -489,6 +490,7 @@
                     });
                 });
             </script>
+
         </div>
 
         @php
@@ -575,6 +577,7 @@
                 ],
             ];
         @endphp
+       
 
         <div id="homeCardsWrapper"
             class="py-10 px-3 max-w-7xl mx-auto
@@ -609,6 +612,14 @@
                 </div>
             @endforeach
         </div>
+         <div  data-aos="fade-up" data-aos-duration="1200">
+            <a href="{{ route('contact') }}"
+                class="inline-block bg-[#F26A27] hover:bg-[#d85c20] text-white font-medium
+                          px-7 py-3 rounded transition shadow-md text-sm">
+                Request Quotation
+            </a>
+        </div>
+
     </div>
 
 

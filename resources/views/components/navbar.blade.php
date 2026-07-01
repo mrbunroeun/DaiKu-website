@@ -1,6 +1,6 @@
 {{-- components/navbar.blade.php --}}
 <div class=" hidden min-[1210px]:block max-w-screen-2xl mx-auto px-6 xl:px-12 2xl:px-20 pt-3 pb-3">
-    <p class="text-white text-[11px]  leading-snug text-right">
+    <p class="text-white text-[11px]  leading-snug text-right max-[700px]:text-[2px]">
         #99, Street 76CC, Trapiang Thleoung 1 Village,
 Chom Chao 1 Commune,<br>
 Pur Senchey District,
