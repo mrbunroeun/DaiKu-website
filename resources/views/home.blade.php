@@ -89,14 +89,11 @@
 ========================================================= --}}
     <div
         class="relative -top-[260px] max-[500px]:-top-[350px] lg:-top-[400px] home_clip
-        min-h-[420px] sm:min-h-[500px] lg:min-h-[780px] max-[1024px]:mt-[10rem] max-[724px]:mt-[5rem] max-[624px]:mt-[1rem] overflow-hidden">
-
-        {{-- Background Color (mobile only, sits behind the shape image, shorter height) --}}
-        <div class="absolute top-[9rem] left-0 w-full h-[200px] bg-[#F26A27] block lg:hidden -z-10"></div>
-
+        min-h-[420px] sm:min-h-[500px] lg:min-h-[780px] max-[1024px]:mt-[10rem] max-[724px]:mt-[5rem] max-[624px]:mt-[-4rem] overflow-hidden">
+        
         {{-- Background Shape (mobile) --}}
         <img src="{{ asset('assets/images/shapes/style.png') }}" alt=""
-            class="absolute top-0 left-0 w-full
+            class="relative top-0 left-0 w-full
         block 
         origin-center
         -rotate-2
@@ -106,6 +103,11 @@
             data-aos="fade-up" data-aos-duration="1000">
 
         {{-- Background Shape (desktop) --}}
+
+        {{-- Background Color (mobile only, sits behind the shape image, shorter height) --}}
+        <div class="relative top-[9rem] left-0 w-full h-[200px] bg-[#F26A27] block lg:hidden -z-10"></div>
+
+        
         {{-- <img src="{{ asset('assets/images/shapes/style.png') }}" alt=""
             class="absolute top-0 left-0 w-full
         hidden lg:block
@@ -220,7 +222,7 @@
             ];
         @endphp
 
-        <div class="py-4 px-3 max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="py-4 px-3 max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach ($services as $index => $service)
                 <div class="rounded-md overflow-hidden flex flex-col shadow-md bg-[#2C3E50]" data-aos="fade-up"
                     data-aos-duration="700" data-aos-delay="{{ $index * 100 }}">
@@ -236,7 +238,7 @@
                         <hr class="mb-3 border border-[#ffffff] opacity-50">
                         <p class="text-xs leading-relaxed mb-5 flex-1 text-[#CBD5E1]">{{ $service['desc'] }}</p>
                         <a href="{{ $service['route'] }}"
-                            class="self-start text-xs font-semibold px-5 py-2 rounded transition hover:opacity-80 bg-[#F26A27] text-white">
+                            class="self-start text-xs font-semibold px-6 py-2 rounded transition hover:opacity-80 bg-[#F26A27] text-white">
                             Explore Services
                         </a>
                     </div>
@@ -314,12 +316,12 @@
 
         {{-- ── HUMAN PHOTO (desktop only) ── --}}
         <img src="{{ asset('assets/images/whychoos-us/Mask1.png') }}" alt="Daiku Engineer"
-            class="absolute 
-           left-[30%] max-w-[50%]  -translate-x-1/2
-           h-[70%] w-[70%] lg:h-[100%] xl:h-[90%] max-[1280px]:mt-[-40px] lg:max-w-[52%]  xl:max-w-[55%] 
+            class="absolute max-w-[85%] max-h-[85%]
+           left-[30%] -translate-x-1/2
+           max-[1024px]:mt-[1.2rem] max-[1440px]:mt-[1.5rem]
            w-auto 
            object-contain object-left-bottom
-           rotate-4 
+           rotate-[2deg]
            md:block hidden
            mb-20" />
 
