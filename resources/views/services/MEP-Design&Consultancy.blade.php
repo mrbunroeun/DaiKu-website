@@ -53,12 +53,7 @@
                             </li>
                         </ul>
                 </div>
-                <div class="md:w-1/2">
-                    <img src="{{ asset('assets/images/service/image.png') }}"
-                        alt="Electrical Systems"
-                        class="w-full h-80 object-cover  shadow-lg">
-
-                </div>
+ 
             </div>
         </div>
 </section>

@@ -46,7 +46,8 @@
     {{-- Section 2: Text Left, Image Right --}}
     <div class="max-w-6xl mx-auto px-4 mt-7">
         <div class="flex flex-col md:flex-row gap-8">
-            <div class="md:w-1/2">
+            <div class="flex flex-row gap-4 md:w-1/2">
+                <div class="flex flex-col gap-2">
                 <h4 class="text-[#F26A27] font-bold text-sm mt-5 mb-2">Our Electrical Services</h4>
                 <ul class="list-disc list-inside text-slate-700 text-sm space-y-1">
                     <li>Cold & Hot Water Supply Systems</li>
@@ -56,6 +57,8 @@
                     <li>Irrigation Systems</li>
                     <li>Water Treatment Plants</li>
                 </ul>
+            </div>
+            <div class="flex flex-col gap-2">
                 <h4 class="text-[#F26A27] font-bold text-sm mt-5 mb-2">Our  Fire Protection  Services</h4>
                 <ul class="list-disc list-inside text-slate-700 text-sm space-y-1">
                     <li>Fire Detection Systems</li>
@@ -66,12 +69,8 @@
 
                 </ul>
             </div>
-            <div class="md:w-1/2">
-                <img src="{{ asset('assets/images/service/2.png') }}"
-                alt="Electrical Systems"
-                class="w-full h-80 object-cover  shadow-lg">
-
             </div>
+  
         </div>
     </div>
 </section>

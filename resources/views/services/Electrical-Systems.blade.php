@@ -9,9 +9,17 @@
     <div class="max-w-6xl mx-auto px-4">
 
         {{-- Title --}}
-        <h1 class="text-2xl md:text-3xl font-bold text-[#F26A27] mb-8">
+        <div class="relative">
+            <div
+                class="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-30 px-5 sm:px-8 py-3 sm:py-4 rounded text-center">
+                <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#F26A27] whitespace-nowrap">
+                    Electrical Systems
+                </h1>
+            </div>
+        </div>
+        {{-- <h1 class="text-2xl md:text-3xl font-bold text-[#F26A27] mb-8">
             Electrical Systems
-        </h1>
+        </h1> --}}
 
         {{-- Row 1: Image Left + Text Right --}}
         <div class="flex flex-col md:flex-row gap-8 mb-12">
@@ -47,11 +55,7 @@
                     <li>Building Automation</li>
                 </ul>
             </div>
-            <div class="w-full md:w-1/2">
-                <img src="{{ asset('assets/images/service/1.png') }}"
-                     alt="Electrical Systems"
-                     class="w-full h-64 md:h-80 object-cover shadow-lg rounded">
-            </div>
+
         </div>
 
     </div>
