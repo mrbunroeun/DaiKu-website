@@ -232,8 +232,8 @@
                     </div>
 
                     <div class="p-5 flex flex-col flex-1">
-                        <h3 class="text-sm font-bold mb-2 text-[#F26A27]">{{ $service['title'] }}</h3>
-                        <hr class="mb-3 border border-[#F26A27] opacity-50">
+                        <h3 class="text-sm font-bold mb-2 text-[#ffffff]">{{ $service['title'] }}</h3>
+                        <hr class="mb-3 border border-[#ffffff] opacity-50">
                         <p class="text-xs leading-relaxed mb-5 flex-1 text-[#CBD5E1]">{{ $service['desc'] }}</p>
                         <a href="{{ $service['route'] }}"
                             class="self-start text-xs font-semibold px-5 py-2 rounded transition hover:opacity-80 bg-[#F26A27] text-white">
@@ -612,11 +612,11 @@
                 </div>
             @endforeach
         </div>
-         <div  data-aos="fade-up" data-aos-duration="1200">
-            <a href="{{ route('contact') }}"
+         <div class="flex justify-center mx-auto"  data-aos="fade-up" data-aos-duration="1200">
+            <a href="{{ route('project') }}"
                 class="inline-block bg-[#F26A27] hover:bg-[#d85c20] text-white font-medium
                           px-7 py-3 rounded transition shadow-md text-sm">
-                Request Quotation
+                View All Projects
             </a>
         </div>
 
