@@ -464,7 +464,7 @@
     </div>
 
    @unless (request()->routeIs('home', 'about', 'career', 'project', 'maintenance', 'contact'))
-<div class="absolute bottom-[-600px] max-[1280px]:bottom-[-550px] max-[1024px]:bottom-[-150px] max-[768px]:bottom-[40px]  max-[640px]:bottom-[270px] max-[490px]:bottom-[470px]  left-0 w-[102%] z-30 pointer-events-none flex justify-center  "> 
+<div class="absolute bottom-[-600px] max-[1280px]:bottom-[-550px] max-[1024px]:bottom-[-150px] max-[768px]:bottom-[40px]  max-[640px]:bottom-[270px] max-[490px]:bottom-[470px]  left-0 w-[102%] z-100 pointer-events-none flex justify-center  "> 
     <img src="{{ asset('assets/images/shapes/Frame2.png') }}"
          alt="the style img for page design"
          aria-hidden="true"

@@ -205,12 +205,12 @@
 
 @section('content')
     {{-- desktop and mobile responsive  --}}
-      <div
+    <div
         class="relative -top-[260px] max-[500px]:-top-[350px] lg:-top-[400px] home_clip
         min-h-[420px] sm:min-h-[500px] lg:min-h-[780px] overflow-hidden">
 
         {{-- Background Color (mobile only, sits behind the shape image, shorter height) --}}
-        <div class="absolute top-0 left-0 w-full h-[340px] bg-[#F26A27] block lg:hidden -z-10"></div>
+        <div class="absolute top-[10rem] left-0 w-full h-[200px] bg-[#F26A27] block lg:hidden -z-10"></div>
 
         {{-- Background Shape (mobile) --}}
         <img src="{{ asset('assets/images/shapes/style.png') }}" alt=""
@@ -241,14 +241,13 @@
 
                 <h1
                     class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl​​ lg:mt-[0rem] sm:mt-[8rem] mt-[5rem] font-bold leading-tight">
-                    Professional MEP Engineering & HVAC <br>
-                    Solutions in Cambodia
+                    About Daiku
                 </h1>
 
                 <p class="mt-6 max-w-3xl mx-auto text-center text-xs sm:text-sm md:text-base leading-7" data-aos="fade-up"
                     data-aos-duration="900" data-aos-delay="100">
-                    Design, installation, maintenance, and consultancy services for HVAC, electrical, plumbing, and fire
-                    protection systems across commercial, industrial, and residential projects.
+                    Providing HVAC, Electrical, Plumbing, Fire Protection, and Air Conditioning Maintenance Services for
+                    commercial, industrial, hospitality, healthcare, and residential projects across Cambodia.
                 </p>
 
                 <div class="flex justify-center mt-6 sm:mt-8" data-aos="fade-up" data-aos-duration="900"
@@ -269,9 +268,7 @@
 
     </div>
 
-
-
-    <div class="relative w-full  mt-[-20rem]  sm:mt-[-24rem] lg:mt-[-30rem]">
+    <div class="relative w-full   max-[490px]:mt-[-22rem] mt-[-18rem]  mt-[-18rem]  sm:mt-[-16rem] lg:mt-[-30rem]">
 
         {{-- Text Section --}}
         <div class="text-start max-w-7xl mx-auto px-4 py-8">
@@ -691,278 +688,279 @@
         </div>
     </section>
 
-<style>
-    .mission-section {
-        text-align: center;
-        padding: 80px 20px 60px;
-        overflow: hidden; /* Prevents unwanted horizontal scrollbars on the page */
-    }
+    <style>
+        .mission-section {
+            text-align: center;
+            padding: 80px 20px 60px;
+            overflow: hidden;
+            /* Prevents unwanted horizontal scrollbars on the page */
+        }
 
-    .circle-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        margin-bottom: 40px;
-        cursor: grab;
-        user-select: none;
-        touch-action: pan-y;
-        width: 100%;
-        
-        /* --- FIX: Lock height to maximum possible height of the active circle + scaling --- */
-        height: 270px; 
-    }
-
-    .circle-wrapper.dragging {
-        cursor: grabbing;
-    }
-
-    .circle-track {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 80px;
-        transition: transform 0.45s cubic-bezier(0.32, 0.72, 0, 1);
-        padding: 20px 0;
-        will-change: transform;
-        
-        /* --- FIX: Ensure track stays perfectly vertically centered inside wrapper --- */
-        height: 100%; 
-    }
-
-    .circle-track.no-transition {
-        transition: none !important;
-    }
-
-    .circle {
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        flex-shrink: 0;
-        will-change: width, height, transform;
-    }
-
-    .circle.small {
-        width: 140px;
-        height: 140px;
-    }
-
-    .circle.main {
-        width: 240px;
-        height: 240px;
-    }
-
-    .circle.active {
-        transform: scale(1.02); 
-    }
-
-    .circle img {
-        width: 82%;
-        height: 82%;
-        object-fit: contain;
-        pointer-events: none; 
-    }
-
-    @media (max-width: 640px) {
-        /* --- FIX: Reduce wrapper height to match smaller mobile sizing profiles --- */
         .circle-wrapper {
-            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-bottom: 40px;
+            cursor: grab;
+            user-select: none;
+            touch-action: pan-y;
+            width: 100%;
+
+            /* --- FIX: Lock height to maximum possible height of the active circle + scaling --- */
+            height: 270px;
         }
 
-        .circle.small {
-            width: 95px;
-            height: 95px;
-        }
-
-        .circle.main {
-            width: 175px;
-            height: 175px;
+        .circle-wrapper.dragging {
+            cursor: grabbing;
         }
 
         .circle-track {
-            gap: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
+            transition: transform 0.45s cubic-bezier(0.32, 0.72, 0, 1);
+            padding: 20px 0;
+            will-change: transform;
+
+            /* --- FIX: Ensure track stays perfectly vertically centered inside wrapper --- */
+            height: 100%;
         }
-    }
 
-    .content-box {
-        max-width: 800px;
-        margin: auto;
-        padding: 0 16px;
-        
-        /* --- OPTIONAL: Give text box a minimum height so different length text descriptions don't jump layout --- */
-        min-height: 120px; 
-    }
-
-    .content-box h2 {
-        font-size: 30px;
-        font-weight: 700;
-        color: #F26A27;
-        margin-bottom: 12px;
-    }
-
-    .content-box p {
-        font-size: 14px;
-        line-height: 1.7;
-        color: #333;
-    }
-</style>
-<script>
-    const contents = [
-        {
-            title: "Core Value",
-            image: "{{ asset('assets/images/icone/image-20.png') }}",
-            description: "Integrity, Quality, Innovation, Teamwork and Customer Satisfaction are the foundation of our success."
-        },
-        {
-            title: "Mission",
-            image: "{{ asset('assets/images/icone/image-18.png') }}",
-            description: "Our mission is to lead in Mechanical, Electrical, Plumbing, and Firefighting design, delivering international standard services."
-        },
-        {
-            title: "Vision",
-            image: "{{ asset('assets/images/icone/image-19.png') }}",
-            description: "Our vision is to become the most trusted MEP engineering consultancy in Cambodia and the region."
+        .circle-track.no-transition {
+            transition: none !important;
         }
-    ];
 
-    let currentIndex = 1; // Start with Mission in center
-    const track = document.getElementById('track');
-    const wrapper = document.getElementById('wrapper');
+        .circle {
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+            will-change: width, height, transform;
+        }
 
-    function createSlides() {
-        track.innerHTML = '';
-        contents.forEach((item, i) => {
-            const div = document.createElement('div');
-            div.className = `circle`;
-            div.innerHTML = `<img src="${item.image}" alt="${item.title}">`;
-            track.appendChild(div);
-        });
-    }
+        .circle.small {
+            width: 140px;
+            height: 140px;
+        }
 
-    function updateLayout(offset = 0) {
-        const circles = track.querySelectorAll('.circle');
-        
-        // 1. Assign correct size classes & sync texts
-        circles.forEach((circle, i) => {
-            circle.classList.remove('main', 'active', 'small');
-            if (i === currentIndex) {
-                circle.classList.add('main', 'active');
-            } else {
-                circle.classList.add('small');
+        .circle.main {
+            width: 240px;
+            height: 240px;
+        }
+
+        .circle.active {
+            transform: scale(1.02);
+        }
+
+        .circle img {
+            width: 82%;
+            height: 82%;
+            object-fit: contain;
+            pointer-events: none;
+        }
+
+        @media (max-width: 640px) {
+
+            /* --- FIX: Reduce wrapper height to match smaller mobile sizing profiles --- */
+            .circle-wrapper {
+                height: 200px;
             }
-        });
 
-        document.getElementById('title').textContent = contents[currentIndex].title;
-        document.getElementById('description').textContent = contents[currentIndex].description;
-
-        // 2. Lock-to-Center Math Formula
-        const targetCircle = circles[currentIndex];
-        if (targetCircle) {
-            const trackCenter = track.offsetWidth / 2;
-            const circleCenter = targetCircle.offsetLeft + (targetCircle.offsetWidth / 2);
-            
-            // Computes positional gap and factors in live dragging displacement
-            const finalTranslate = (trackCenter - circleCenter) + offset;
-            track.style.transform = `translateX(${finalTranslate}px)`;
-        }
-    }
-
-    // Drag states
-    let isDragging = false;
-    let hasMoved = false; // Tracks if actual drag intent occurred
-    let startX = 0;
-    let dragOffset = 0;
-    const dragSensitivity = 1.0; 
-
-    function startDrag(x) {
-        isDragging = true;
-        hasMoved = false;
-        startX = x;
-        dragOffset = 0;
-        track.classList.add('no-transition');
-        wrapper.classList.add('dragging');
-    }
-
-    function moveDrag(x) {
-        if (!isDragging) return;
-        
-        dragOffset = (x - startX) * dragSensitivity;
-
-        // If the movement passes a tiny threshold, confirm it's an active drag action
-        if (Math.abs(dragOffset) > 2) {
-            hasMoved = true;
-        }
-
-        const circles = track.querySelectorAll('.circle');
-        const currentGap = window.innerWidth <= 640 ? 50 : 80;
-        const stepWidth = circles[currentIndex] ? (circles[currentIndex].offsetWidth / 2) + currentGap : 200;
-
-        // Strict Edge Checking with smoothed coordinate handoff
-        if (dragOffset > stepWidth) {
-            if (currentIndex === 0) {
-                updateLayout(dragOffset);
-                return;
+            .circle.small {
+                width: 95px;
+                height: 95px;
             }
-            currentIndex = currentIndex - 1;
-            startX += stepWidth; 
-            dragOffset = x - startX;
-        } else if (dragOffset < -stepWidth) {
-            if (currentIndex === contents.length - 1) {
-                updateLayout(dragOffset);
-                return;
+
+            .circle.main {
+                width: 175px;
+                height: 175px;
             }
-            currentIndex = currentIndex + 1;
-            startX -= stepWidth; 
-            dragOffset = x - startX;
+
+            .circle-track {
+                gap: 50px;
+            }
         }
 
-        updateLayout(dragOffset);
-    }
+        .content-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 0 16px;
 
-    function endDrag() {
-        if (!isDragging) return;
-        isDragging = false;
-        wrapper.classList.remove('dragging');
-        
-        // Force browser geometry sync before reenabling CSS animation transitions
-        track.offsetHeight; 
-        track.classList.remove('no-transition');
+            /* --- OPTIONAL: Give text box a minimum height so different length text descriptions don't jump layout --- */
+            min-height: 120px;
+        }
 
-        // Reset the offset and snap clean to dead center
-        dragOffset = 0;
-        updateLayout(0);
-    }
+        .content-box h2 {
+            font-size: 30px;
+            font-weight: 700;
+            color: #F26A27;
+            margin-bottom: 12px;
+        }
 
-    // Completely intercept and discard any native click handlers if a drag took place
-    wrapper.addEventListener('click', e => {
-        if (hasMoved) {
+        .content-box p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #333;
+        }
+    </style>
+    <script>
+        const contents = [{
+                title: "Core Value",
+                image: "{{ asset('assets/images/icone/image-20.png') }}",
+                description: "Integrity, Quality, Innovation, Teamwork and Customer Satisfaction are the foundation of our success."
+            },
+            {
+                title: "Mission",
+                image: "{{ asset('assets/images/icone/image-18.png') }}",
+                description: "Our mission is to lead in Mechanical, Electrical, Plumbing, and Firefighting design, delivering international standard services."
+            },
+            {
+                title: "Vision",
+                image: "{{ asset('assets/images/icone/image-19.png') }}",
+                description: "Our vision is to become the most trusted MEP engineering consultancy in Cambodia and the region."
+            }
+        ];
+
+        let currentIndex = 1; // Start with Mission in center
+        const track = document.getElementById('track');
+        const wrapper = document.getElementById('wrapper');
+
+        function createSlides() {
+            track.innerHTML = '';
+            contents.forEach((item, i) => {
+                const div = document.createElement('div');
+                div.className = `circle`;
+                div.innerHTML = `<img src="${item.image}" alt="${item.title}">`;
+                track.appendChild(div);
+            });
+        }
+
+        function updateLayout(offset = 0) {
+            const circles = track.querySelectorAll('.circle');
+
+            // 1. Assign correct size classes & sync texts
+            circles.forEach((circle, i) => {
+                circle.classList.remove('main', 'active', 'small');
+                if (i === currentIndex) {
+                    circle.classList.add('main', 'active');
+                } else {
+                    circle.classList.add('small');
+                }
+            });
+
+            document.getElementById('title').textContent = contents[currentIndex].title;
+            document.getElementById('description').textContent = contents[currentIndex].description;
+
+            // 2. Lock-to-Center Math Formula
+            const targetCircle = circles[currentIndex];
+            if (targetCircle) {
+                const trackCenter = track.offsetWidth / 2;
+                const circleCenter = targetCircle.offsetLeft + (targetCircle.offsetWidth / 2);
+
+                // Computes positional gap and factors in live dragging displacement
+                const finalTranslate = (trackCenter - circleCenter) + offset;
+                track.style.transform = `translateX(${finalTranslate}px)`;
+            }
+        }
+
+        // Drag states
+        let isDragging = false;
+        let hasMoved = false; // Tracks if actual drag intent occurred
+        let startX = 0;
+        let dragOffset = 0;
+        const dragSensitivity = 1.0;
+
+        function startDrag(x) {
+            isDragging = true;
+            hasMoved = false;
+            startX = x;
+            dragOffset = 0;
+            track.classList.add('no-transition');
+            wrapper.classList.add('dragging');
+        }
+
+        function moveDrag(x) {
+            if (!isDragging) return;
+
+            dragOffset = (x - startX) * dragSensitivity;
+
+            // If the movement passes a tiny threshold, confirm it's an active drag action
+            if (Math.abs(dragOffset) > 2) {
+                hasMoved = true;
+            }
+
+            const circles = track.querySelectorAll('.circle');
+            const currentGap = window.innerWidth <= 640 ? 50 : 80;
+            const stepWidth = circles[currentIndex] ? (circles[currentIndex].offsetWidth / 2) + currentGap : 200;
+
+            // Strict Edge Checking with smoothed coordinate handoff
+            if (dragOffset > stepWidth) {
+                if (currentIndex === 0) {
+                    updateLayout(dragOffset);
+                    return;
+                }
+                currentIndex = currentIndex - 1;
+                startX += stepWidth;
+                dragOffset = x - startX;
+            } else if (dragOffset < -stepWidth) {
+                if (currentIndex === contents.length - 1) {
+                    updateLayout(dragOffset);
+                    return;
+                }
+                currentIndex = currentIndex + 1;
+                startX -= stepWidth;
+                dragOffset = x - startX;
+            }
+
+            updateLayout(dragOffset);
+        }
+
+        function endDrag() {
+            if (!isDragging) return;
+            isDragging = false;
+            wrapper.classList.remove('dragging');
+
+            // Force browser geometry sync before reenabling CSS animation transitions
+            track.offsetHeight;
+            track.classList.remove('no-transition');
+
+            // Reset the offset and snap clean to dead center
+            dragOffset = 0;
+            updateLayout(0);
+        }
+
+        // Completely intercept and discard any native click handlers if a drag took place
+        wrapper.addEventListener('click', e => {
+            if (hasMoved) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        }, true); // Global capture phase hook
+
+        // Auto-recenter baseline if screen orientation or browser sizes change
+        window.addEventListener('resize', () => updateLayout(0));
+
+        // Desktop Mouse Events
+        wrapper.addEventListener('mousedown', e => {
             e.preventDefault();
-            e.stopPropagation();
-        }
-    }, true); // Global capture phase hook
+            startDrag(e.clientX);
+        });
+        window.addEventListener('mousemove', e => moveDrag(e.clientX));
+        window.addEventListener('mouseup', endDrag);
 
-    // Auto-recenter baseline if screen orientation or browser sizes change
-    window.addEventListener('resize', () => updateLayout(0));
+        // Mobile/Tablet Touch Events
+        wrapper.addEventListener('touchstart', e => startDrag(e.touches[0].clientX));
+        wrapper.addEventListener('touchmove', e => moveDrag(e.touches[0].clientX));
+        wrapper.addEventListener('touchend', endDrag);
 
-    // Desktop Mouse Events
-    wrapper.addEventListener('mousedown', e => {
-        e.preventDefault();
-        startDrag(e.clientX);
-    });
-    window.addEventListener('mousemove', e => moveDrag(e.clientX));
-    window.addEventListener('mouseup', endDrag);
-
-    // Mobile/Tablet Touch Events
-    wrapper.addEventListener('touchstart', e => startDrag(e.touches[0].clientX));
-    wrapper.addEventListener('touchmove', e => moveDrag(e.touches[0].clientX));
-    wrapper.addEventListener('touchend', endDrag);
-
-    // Initial Bootstrap Execution
-    createSlides();
-    setTimeout(() => updateLayout(0), 50);
-</script>
+        // Initial Bootstrap Execution
+        createSlides();
+        setTimeout(() => updateLayout(0), 50);
+    </script>
 
     {{-- ===== FAQ ===== --}}
     <section class="bg-white py-20 px-4 md:px-6 border-b border-slate-200" id="faqs-section">

@@ -1,81 +1,6 @@
 @extends('layouts.app')
 
-@section('css')
-    <style>
-        @keyframes scrollleft {
-            from {
-                left: 100%;
-            }
-
-            to {
-                left: calc((var(--item-width) + var(--item-gap)) * -1 * var(--total-items));
-            }
-        }
-
-        :root {
-            --item-width: 160px;
-            --total-items: 8;
-            --item-gap: 60px;
-            --duration: 40s;
-        }
-
-        .item {
-            width: var(--item-width);
-            height: 120px;
-            position: absolute;
-            left: calc(100% + ((var(--item-width) + var(--item-gap)) * var(--total-items)));
-            animation: scrollleft var(--duration) linear infinite;
-        }
-
-        .item1 {
-            animation-delay: calc(var(--duration) / var(--total-items) * -7);
-        }
-
-        .item2 {
-            animation-delay: calc(var(--duration) / var(--total-items) * -6);
-        }
-
-        .item3 {
-            animation-delay: calc(var(--duration) / var(--total-items) * -5);
-        }
-
-        .item4 {
-            animation-delay: calc(var(--duration) / var(--total-items) * -4);
-        }
-
-        .item5 {
-            animation-delay: calc(var(--duration) / var(--total-items) * -3);
-        }
-
-        .item6 {
-            animation-delay: calc(var(--duration) / var(--total-items) * -2);
-        }
-
-        .item7 {
-            animation-delay: calc(var(--duration) / var(--total-items) * -1);
-        }
-
-        .item8 {
-            animation-delay: 0s;
-        }
-
-        .wrapper:hover .item {
-            animation-play-state: paused;
-        }
-
-        @media (max-width: 640px) {
-            :root {
-                --item-width: 100px;
-                --item-gap: 30px;
-                --duration: 25s;
-            }
-
-            .item {
-                height: 80px;
-            }
-        }
-    </style>
-@endsection
+@section('title', 'AC Maintenance Plans - Daiku MEP Cambodia')
 
 @section('content')
     {{-- =========================================================
@@ -86,11 +11,11 @@
      - Title/paragraph button: edit lines below
 ========================================================= --}}
     <div
-        class="relative mt-[-20rem]  sm-:mt-[-25rem] lg:mt-[-30rem] home_clip
-        min-h-[420px] sm:min-h-[500px] lg:min-h-[780px] overflow-hidden">
+        class="relative mt-[-15rem]  sm-:mt-[-20rem] lg:mt-[-25rem] home_clip
+        min-h-[420px] sm:min-h-[500px] lg:min-h-[780px] max-[490px]:mt-[-25rem] overflow-hidden">
 
         {{-- Background Color (mobile only, sits behind the shape image, shorter height) --}}
-        <div class="absolute top-0 left-0 w-full h-[340px] bg-[#F26A27] block lg:hidden -z-10"></div>
+        <div class="absolute top-[9rem] left-0 w-full h-[200px] bg-[#F26A27] block lg:hidden -z-10"></div>
 
         {{-- Background Shape (mobile) --}}
         <img src="{{ asset('assets/images/shapes/style.png') }}" alt=""
@@ -115,21 +40,20 @@
             data-aos="fade-up" data-aos-duration="1000">
 
         {{-- Hero Content --}}
-        <div class="absolute inset-0 flex justify-center items-start z-20">
+         <div class="absolute inset-0 flex justify-center items-start z-20">
 
             <div class="w-full max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-center text-white lg:pt-[280px]">
 
-                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight">
-                    Save Energy. Prevent Breakdowns.
-                    Extend Equipment Lifespan. <br class="hidden lg:block">
-
+                <h1
+                    class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl​​ lg:mt-[0rem] sm:mt-[8rem] mt-[5rem] font-bold leading-tight">
+                    Professional MEP Engineering & HVAC <br>
+                    Solutions in Cambodia
                 </h1>
 
-                <p class="mt-6 max-w-3xl mx-auto text-center text-sm sm:text-base leading-8" data-aos="fade-up"
+                <p class="mt-6 max-w-3xl mx-auto text-center text-xs sm:text-sm md:text-base leading-7" data-aos="fade-up"
                     data-aos-duration="900" data-aos-delay="100">
-                    Design, installation, maintenance, and consultancy services for HVAC,
-                    electrical, plumbing, and fire protection systems across commercial,
-                    industrial, and residential projects.
+                    Design, installation, maintenance, and consultancy services for HVAC, electrical, plumbing, and fire
+                    protection systems across commercial, industrial, and residential projects.
                 </p>
 
                 <div class="flex justify-center mt-6 sm:mt-8" data-aos="fade-up" data-aos-duration="900"

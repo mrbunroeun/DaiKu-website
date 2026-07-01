@@ -92,7 +92,7 @@
         min-h-[420px] sm:min-h-[500px] lg:min-h-[780px] overflow-hidden">
 
         {{-- Background Color (mobile only, sits behind the shape image, shorter height) --}}
-        <div class="absolute top-0 left-0 w-full h-[340px] bg-[#F26A27] block lg:hidden -z-10"></div>
+        <div class="absolute top-[9rem] left-0 w-full h-[200px] bg-[#F26A27] block lg:hidden -z-10"></div>
 
         {{-- Background Shape (mobile) --}}
         <img src="{{ asset('assets/images/shapes/style.png') }}" alt=""
@@ -153,11 +153,6 @@
 
 
 
-
-
-
-
-
     {{-- =========================================================
      DESKTOP / LAPTOP VERSION (shown from lg breakpoint up)
      ⚠️ DESKTOP SECTIONS BELOW - EDIT HERE:
@@ -167,7 +162,7 @@
      - Background container: line 154
 ========================================================= --}}
     {{-- ══════════════ ABOUT / SERVICES ══════════════ --}}
-    <div class="relative w-full mt-[-20rem]  sm-:mt-[-25rem] lg:mt-[-30rem]">
+    <div class="relative w-full mt-[-20rem]  sm-:mt-[-25rem] lg:mt-[-30rem] max-[490px]:mt-[-23rem]">
         <div class="flex flex-col items-center gap-5">
             <h2 class="text-base sm:text-lg font-bold text-[#F26A27] mb-3 text-center">
                 About Daiku
