@@ -89,7 +89,7 @@
 ========================================================= --}}
     <div
         class="relative -top-[260px] max-[500px]:-top-[350px] lg:-top-[400px] home_clip
-        min-h-[420px] sm:min-h-[500px] lg:min-h-[780px] overflow-hidden">
+        min-h-[420px] sm:min-h-[500px] lg:min-h-[780px] max-[1024px]:mt-[10rem] max-[724px]:mt-[5rem] max-[624px]:mt-[1rem] overflow-hidden">
 
         {{-- Background Color (mobile only, sits behind the shape image, shorter height) --}}
         <div class="absolute top-[9rem] left-0 w-full h-[200px] bg-[#F26A27] block lg:hidden -z-10"></div>
@@ -97,7 +97,7 @@
         {{-- Background Shape (mobile) --}}
         <img src="{{ asset('assets/images/shapes/style.png') }}" alt=""
             class="absolute top-0 left-0 w-full
-        block lg:hidden
+        block 
         origin-center
         -rotate-2
         scale-150
@@ -106,7 +106,7 @@
             data-aos="fade-up" data-aos-duration="1000">
 
         {{-- Background Shape (desktop) --}}
-        <img src="{{ asset('assets/images/shapes/style.png') }}" alt=""
+        {{-- <img src="{{ asset('assets/images/shapes/style.png') }}" alt=""
             class="absolute top-0 left-0 w-full
         hidden lg:block
         origin-center
@@ -114,7 +114,7 @@
         scale-150
         z-0
         pointer-events-none"
-            data-aos="fade-up" data-aos-duration="1000">
+            data-aos="fade-up" data-aos-duration="1000"> --}}
 
         {{-- Hero Content --}}
         <div class="absolute inset-0 flex justify-center items-start z-20">
@@ -315,11 +315,11 @@
         {{-- ── HUMAN PHOTO (desktop only) ── --}}
         <img src="{{ asset('assets/images/whychoos-us/Mask1.png') }}" alt="Daiku Engineer"
             class="absolute 
-           left-[30%]  -translate-x-1/2
-           h-[70%] w-[70%] lg:h-[100%] xl:h-[90%]
-           w-auto max-w-[50%] lg:max-w-[52%] xl:max-w-[55%]
+           left-[30%] max-w-[50%]  -translate-x-1/2
+           h-[70%] w-[70%] lg:h-[100%] xl:h-[90%] max-[1280px]:mt-[-40px] lg:max-w-[52%]  xl:max-w-[55%] 
+           w-auto 
            object-contain object-left-bottom
-           rotate-4 max-[1280px]:mt-[-40px]
+           rotate-4 
            md:block hidden
            mb-20" />
 
