@@ -4,12 +4,13 @@
 
 @section('content')
     {{-- Section 1: Image Left, Text Right --}}
-    <section class="relative z-50 py-10 md:py-16​​​">
+    <section class="relative z-50 py-10 md:py-16​​​ 
+    max-[1024px]:mt-[9rem] max-[640px]:mt-[-10rem]  max-[620px]:mt-[-7rem] max-[490px]:mt-[-13rem]">
         <div class="relative">
             <div
                 class="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-30 px-5 sm:px-8 py-3 sm:py-4 rounded text-center">
                 <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#F26A27] whitespace-nowrap">
-                    MEP Design & Consultancy
+                    Mechanical System
                 </h1>
             </div>
         </div>
@@ -235,8 +236,6 @@
         <div class="max-w-4xl mx-auto">
 
             <div class="text-center mb-10 md:mb-16">
-                <span class="text-orange-500 text-xs font-extrabold uppercase tracking-wide block mb-2">Support
-                    Center</span>
                 <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Frequently Asked
                     Questions</h2>
                 <div class="w-12 h-1 bg-orange-500 mx-auto mt-3 rounded-full"></div>

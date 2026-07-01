@@ -5,10 +5,11 @@
 @section('content')
 
 {{-- Section 1: Image Left, Text Right --}}
-<section class="relative z-50 py-16 max-[590px]:mt-[-30rem]">
+<section class="relative z-50 py-16 
+max-[1024px]:mt-[9rem] max-[640px]:mt-[-10rem]  max-[620px]:mt-[-7rem] max-[490px]:mt-[-13rem]">
     <div class="relative">
         {{-- Title Box --}}
-        <div class="bottom-10 left-1/2 -translate-x-1/2 z-30 bg-white px-8 py-4 rounded">
+        <div class="  bottom-10 left-1/2 -translate-x-1/2 z-30 bg-white px-8 py-4 rounded">
             <h1 class="text-3xl font-bold text-[#F26A27]">
                 MEP Design & Consultancy
             </h1>
@@ -39,7 +40,6 @@
 
                     <h4 class="text-[#F26A27] font-bold text-sm mt-5 mb-2">Our Consultancy Services </h4>
                         <ul class="list-disc list-inside text-slate-700 text-sm space-y-1">
-                            <li>MEP System Design</li>
                             <li>MEP System Design</li>
                             <li>Technical Consultancy</li>
                             <li>Engineering Evaluation</li>
@@ -217,10 +217,6 @@
 
         <!-- Heading -->
         <div class="text-center mb-8">
-            <span class="text-orange-500 text-xs font-extrabold uppercase tracking-wide block mb-2">
-                Support Center
-            </span>
-
             <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
                 Frequently Asked Questions
             </h2>

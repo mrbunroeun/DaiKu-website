@@ -5,7 +5,8 @@
 @section('content')
 
 {{-- Section 1: Image Left, Text Right --}}
-<section class="relative z-50 py-16​ max-[1024px]:mt-[9rem] max-[640px]:mt-[-10rem]  max-[620px]:mt-[-7rem] max-[490px]:mt-[-13rem]">
+<section class="relative z-50 py-16​ 
+max-[1024px]:mt-[9rem] max-[640px]:mt-[-10rem]  max-[620px]:mt-[-7rem] max-[490px]:mt-[-13rem]">
     <div class="max-w-6xl mx-auto px-4">
 
         {{-- Title --}}
@@ -31,7 +32,7 @@
             <div class="w-full md:w-1/2 flex flex-col justify-center">
                 <h2 class="text-lg font-bold text-[#F26A27] mb-3">Electrical Systems</h2>
                 <p class="text-slate-600 text-sm leading-relaxed">
-                    Reliable Electrical Engineering Solutions for Modern Buildings.
+                    <strong class="font-semibold text-[#2B3D4F] ">Reliable Electrical Engineering Solutions for Modern Buildings.</strong><br><br>
                     Daiku delivers professional electrical engineering services that support safe,
                     efficient, and reliable building operations. From power distribution and lighting
                     systems to testing, commissioning, and maintenance, our team provides complete
@@ -45,14 +46,14 @@
             <div class="w-full md:w-1/2 flex flex-col justify-center">
                 <h4 class="text-[#F26A27] font-bold text-sm mt-5 mb-2">Our Electrical Services</h4>
                 <ul class="list-disc list-inside text-slate-700 text-sm space-y-2">
+                    <li>Electrical Installation</li>
                     <li>Power Distribution Systems</li>
                     <li>Lighting Systems</li>
-                    <li>Low-Voltage Systems</li>
                     <li>Generators & UPS</li>
-                    <li>Earthing & Lightning Protection</li>
-                    <li>Fire Alarm Systems</li>
-                    <li>CCTV & Security Systems</li>
-                    <li>Building Automation</li>
+                    <li>Low Voltage Systems</li>
+                    <li>Control Systems</li>
+                    <li>Electrical Testing & Commissioning</li>
+                    <li>Preventive Maintenance</li>
                 </ul>
             </div>
 
@@ -175,9 +176,6 @@
     <div class="max-w-5xl mx-auto">
 
         <div class="text-center mb-8">
-            <span class="text-orange-500 text-xs font-extrabold uppercase tracking-wide block mb-2">
-                Support Center
-            </span>
             <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
                 Frequently Asked Questions
             </h2>

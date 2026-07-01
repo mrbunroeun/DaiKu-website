@@ -168,12 +168,17 @@
 ========================================================= --}}
     {{-- ══════════════ ABOUT / SERVICES ══════════════ --}}
     <div class="relative w-full mt-[-20rem]  sm-:mt-[-25rem] lg:mt-[-30rem]">
+        <div class="flex flex-col items-center gap-5">
+            <h2 class="text-base sm:text-lg font-bold text-[#F26A27] mb-3 text-center">
+                About Daiku
+            </h2>
 
-        <p class="text-center text-xs sm:text-sm max-w-3xl mx-auto px-4 -mt-4 mb-10 text-[#2b3d4f]">
-            Daiku MEP Solution Co., Ltd provides professional Mechanical, Electrical, and Plumbing (MEP)
-            engineering services for commercial, industrial, hospitality, healthcare, and residential
-            developments across Cambodia.
-        </p>
+            <p class="text-center text-xs sm:text-sm max-w-3xl px-4 -mt-4 mb-10 text-[#2b3d4f]">
+                Daiku MEP Solution Co., Ltd provides professional Mechanical, Electrical, and Plumbing (MEP)
+                engineering services for commercial, industrial, hospitality, healthcare, and residential
+                developments across Cambodia.
+            </p>
+        </div>
 
         @php
             $services = [
@@ -413,22 +418,82 @@
             </div>
         </div>
     </div>
+
     {{-- ══════════════ PROJECT CREDENTIALS ══════════════ --}}
     <div class="relative w-full" id="project">
-        <h1 class="text-xl sm:text-2xl md:text-3xl text-[#2b3d4f] font-bold py-8 max-w-7xl mx-auto px-4 leading-none">
-            Project Credentials
-        </h1>
+        <div class="flex flex-col items-center ">
+            <h1 class="text-xl sm:text-2xl md:text-3xl text-[#F36B24] font-bold py-8 max-w-7xl mx-auto px-4 leading-none">
+                Featured Projects
+            </h1>
 
-        {{-- Filter buttons --}}
-        <div class="flex flex-wrap gap-2 justify-center md:justify-end px-4 md:px-12">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="resort">Resort</button>
-            <button class="filter-btn" data-filter="hotel">Hotel</button>
-            <button class="filter-btn" data-filter="polyclinic">Polyclinic</button>
-            <button class="filter-btn" data-filter="residence">Residence & Villa</button>
-            <button class="filter-btn" data-filter="aeon">Stores</button>
-            <button class="filter-btn" data-filter="mall">Mall</button>
-            <button class="filter-btn" data-filter="restaurant">Restaurant</button>
+            {{-- Filter buttons --}}
+            <div
+                class="flex flex-wrap gap-5 justify-center md:justify-end px-4 md:px-12 text-[1rem] max-[600px]:text-[0.6rem]">
+                <button class="filter-btn text-[#F36B24] border-b-2 border-[#F36B24] pb-1" data-filter="all">
+                    All
+                </button>
+
+                <button class="filter-btn text-[#2b3d4f] border-b-2 border-transparent pb-1" data-filter="resort">
+                    Resort
+                </button>
+
+                <button class="filter-btn text-[#2b3d4f] border-b-2 border-transparent pb-1" data-filter="hotel">
+                    Hotel
+                </button>
+
+                <button class="filter-btn text-[#2b3d4f] border-b-2 border-transparent pb-1" data-filter="polyclinic">
+                    Polyclinic
+                </button>
+
+                <button class="filter-btn text-[#2b3d4f] border-b-2 border-transparent pb-1" data-filter="residence">
+                    Residence & Villa
+                </button>
+
+                <button class="filter-btn text-[#2b3d4f] border-b-2 border-transparent pb-1" data-filter="aeon">
+                    Stores
+                </button>
+
+                <button class="filter-btn text-[#2b3d4f] border-b-2 border-transparent pb-1" data-filter="mall">
+                    Mall
+                </button>
+
+                <button class="filter-btn text-[#2b3d4f] border-b-2 border-transparent pb-1" data-filter="restaurant">
+                    Restaurant
+                </button>
+            </div>
+
+            <script>
+                const buttons = document.querySelectorAll('.filter-btn');
+
+                buttons.forEach(button => {
+                    button.addEventListener('click', () => {
+
+                        // Reset all buttons
+                        buttons.forEach(btn => {
+                            btn.classList.remove(
+                                'text-[#F36B24]',
+                                'border-[#F36B24]'
+                            );
+
+                            btn.classList.add(
+                                'text-[#2b3d4f]',
+                                'border-transparent'
+                            );
+                        });
+
+                        // Activate clicked button
+                        button.classList.remove(
+                            'text-[#2b3d4f]',
+                            'border-transparent'
+                        );
+
+                        button.classList.add(
+                            'text-[#F36B24]',
+                            'border-[#F36B24]'
+                        );
+                    });
+                });
+            </script>
         </div>
 
         @php

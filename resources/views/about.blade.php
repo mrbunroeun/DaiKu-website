@@ -205,8 +205,8 @@
 
 @section('content')
     {{-- desktop and mobile responsive  --}}
-    <div
-        class="relative top-[-260px] sm:top-[-100px] lg:-top-[400px] home_clip
+      <div
+        class="relative -top-[260px] max-[500px]:-top-[350px] lg:-top-[400px] home_clip
         min-h-[420px] sm:min-h-[500px] lg:min-h-[780px] overflow-hidden">
 
         {{-- Background Color (mobile only, sits behind the shape image, shorter height) --}}
@@ -219,7 +219,7 @@
         origin-center
         -rotate-2
         scale-150
-        z-1000
+        z-0
         pointer-events-none"
             data-aos="fade-up" data-aos-duration="1000">
 
@@ -241,13 +241,14 @@
 
                 <h1
                     class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl​​ lg:mt-[0rem] sm:mt-[8rem] mt-[5rem] font-bold leading-tight">
-                    About Daiku
+                    Professional MEP Engineering & HVAC <br>
+                    Solutions in Cambodia
                 </h1>
 
                 <p class="mt-6 max-w-3xl mx-auto text-center text-xs sm:text-sm md:text-base leading-7" data-aos="fade-up"
                     data-aos-duration="900" data-aos-delay="100">
-                    Providing HVAC, Electrical, Plumbing, Fire Protection, and Air Conditioning Maintenance Services for
-                    commercial, industrial, hospitality, healthcare, and residential projects across Cambodia.
+                    Design, installation, maintenance, and consultancy services for HVAC, electrical, plumbing, and fire
+                    protection systems across commercial, industrial, and residential projects.
                 </p>
 
                 <div class="flex justify-center mt-6 sm:mt-8" data-aos="fade-up" data-aos-duration="900"
@@ -270,11 +271,6 @@
 
 
 
-
-
-
-
-
     <div class="relative w-full  mt-[-20rem]  sm:mt-[-24rem] lg:mt-[-30rem]">
 
         {{-- Text Section --}}
@@ -283,14 +279,14 @@
                 data-aos="fade-down" data-aos-duration="800">
                 Company Overview
             </h1>
-            <p class="text-xs sm:text-sm max-w-3xl mb-6" style="color:#2b3d4f;">
+            <p class="text-xs sm:text-sm max-w-full mb-6" style="color:#2b3d4f;">
                 Daiku MEP Solution Co., Ltd is a professional Mechanical, Electrical, and Plumbing (MEP)
                 engineering company based in Phnom Penh, Cambodia. Established in 2020, we specialize in
                 delivering comprehensive engineering solutions including HVAC systems, electrical systems,
                 plumbing systems, fire protection systems, MEP design & consultancy, and air conditioning
                 annual maintenance services.
             </p>
-            <p class="text-xs sm:text-sm max-w-3xl" style="color:#2b3d4f;">
+            <p class="text-xs sm:text-sm max-w-full" style="color:#2b3d4f;">
                 Our experienced engineering team supports clients throughout every stage of a project—from
                 planning and design to installation, testing, commissioning, and long-term maintenance. We
                 serve a wide range of industries including hospitality, healthcare, commercial, retail,
